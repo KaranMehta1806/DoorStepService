@@ -96,6 +96,7 @@ Start the frontend server by navigating to the client directory and running the 
 ```bash
 npm run dev
 ```
+---
 
 ## 📞 Contact
 Feel free to connect with me through the following platforms:
