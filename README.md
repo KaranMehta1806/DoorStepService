@@ -1,15 +1,15 @@
-# Doorstep Service
+# 🚪 Doorstep Service
 
 Doorstep Service is a full-stack application that allows users to book services like home repairs, cleaning, and other essential services from the comfort of their homes. The platform includes an admin dashboard for managing users, service providers, and services, and allows users to book appointments, track service progress, and much more.
 
 ---
 
-## About the Project
+## 📜 About the Project
 
 This project is a **MERN (MongoDB, Express.js, React, Node.js)** stack-based application. It consists of two main parts:
 
 1. **API (Backend)**: Built using Node.js, Express.js, and MongoDB, it handles the business logic, database interactions, and authentication.
-2. **Client (Frontend)**: Built using React.js, it provides a responsive and interactive user interface, with features such as booking services, user profiles, and a dashboard for service providers and admins.
+2. **Client (Frontend)**: Built using React.js, it provides a responsive and interactive user interface, with features such as booking services, user profiles, and a dashboard for service providers and admin.
 
 ---
 
@@ -86,6 +86,7 @@ Once the dependencies are installed and the .env file is set up, you can start t
 
 #### Backend
 Start the backend server by navigating to the api directory and running the following command:
+
 ```bash
 nodemon app.js
 ```
