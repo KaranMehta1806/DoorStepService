@@ -1,0 +1,43 @@
+.card {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .table-responsive {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .table th {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa;
+  }
+  

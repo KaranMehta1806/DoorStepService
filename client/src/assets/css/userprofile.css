@@ -1,0 +1,174 @@
+/* General Styles */
+body {
+  background-color: #f7f7f7;
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+}
+
+/* Card Styling */
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Photo Section */
+.profile-photo-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #007bff;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.photo-change-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: rgba(0, 123, 255, 0.7);
+  color: #fff;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.photo-change-icon:hover {
+  background-color: #0056b3;
+}
+
+/* User Info Section */
+.user-info {
+  font-size: 1.1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+p {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+/* Form Styling */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 12px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #FF5B4A;
+  border-color: #FF5B4A;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .profile-photo-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-control {
+    font-size: 0.95rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .col-md-4 {
+    order: -1; /* Ensure the photo is above the form in mobile view */
+  }
+
+  .profile-photo-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/* .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+} */
+
+/* .changepass{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+} */

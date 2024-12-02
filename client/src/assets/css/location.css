@@ -1,0 +1,95 @@
+/* Card Container */
+.city-card-container .card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card Header */
+  .card-header {
+    background-color: #1a1a2e;
+    color: #f0f0f0;
+    padding: 1rem;
+    font-weight: 600;
+  }
+  
+  /* Table Styles */
+  .table-responsive {
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .table {
+    margin: 0;
+    background-color: #fff;
+  }
+  
+  .table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+  
+  .table td {
+    padding: 12px;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  /* Hover Effect */
+  .table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+  }
+  
+  /* Button Styles */
+  .btn-outline-danger {
+    color: #e63946;
+    border-color: #e63946;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #e63946;
+    color: #fff;
+  }
+  
+  .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Button Group */
+  .btn-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* Card Footer */
+  .card-footer {
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    font-size: 0.85rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .table th,
+    .table td {
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+  
+    .btn-group .btn {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+    }
+  }
+  
+
+  

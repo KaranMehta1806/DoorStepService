@@ -1,0 +1,42 @@
+.state-card-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+  .table thead th {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .btn-group .btn {
+    min-width: 80px;
+  }
+  
+  .action-buttons .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  
+  .action-buttons .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .action-buttons .btn-outline-primary {
+    border-color: #0d6efd;
+    color: #0d6efd;
+  }
+  
+  .action-buttons .btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa;
+  }
+  

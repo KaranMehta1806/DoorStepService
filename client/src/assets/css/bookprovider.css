@@ -1,0 +1,154 @@
+/* Container */
+.provider-detail-container {
+  padding: 20px;
+}
+
+/* Custom Card */
+.custom-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Provider Info */
+.provider-info {
+  display: flex;
+  align-items: center;
+}
+
+.provider-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 2px solid #FF5B4A;
+
+}
+
+.provider-text {
+  flex: 1;
+}
+
+.provider-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.provider-bio {
+  font-size: 1rem;
+  color: #666;
+}
+
+.provider-location {
+  color: #002434;
+  display: flex;
+  align-items: center;
+}
+
+/* Subcategory Description */
+.subcategory-description {
+  margin-top: 20px;
+}
+
+/* Rating Section */
+.rating-section {
+  margin-top: 20px;
+}
+
+.rating-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.rating-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.rating-stars {
+  color: #ffcc00;
+}
+
+.filled-star {
+  color: #f5c518;
+}
+
+.half-filled-star {
+  color: #f5c518;
+}
+
+.empty-star {
+  color: #ccc;
+}
+
+/* Book Button */
+.book-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF5B4A;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+  background-color: #002434;
+}
+
+/* Feedback Section */
+.feedback-section {
+  padding-top: 20px;
+}
+
+.review-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.review-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-user-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #FF5B4A;
+}
+
+.user-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.review-comment {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.carousel-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}

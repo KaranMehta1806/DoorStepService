@@ -1,0 +1,28 @@
+.navbar-btn {
+    background-color: #FF5B4A;
+    color: #fff;
+    height: 3rem;
+    padding: 1.6rem 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem; /* Space between icon and text */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-btn:hover {
+    background-color: #002434; /* Darker shade for hover effect */
+    color: white;
+  }
+
+  
+  
+  .navbar-btn i {
+    font-size: 1.2rem; /* Adjust icon size */
+  }
+
+

@@ -1,0 +1,30 @@
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    border: 2px solid #eaeaea;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+  
+  /* .btn {
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  } */

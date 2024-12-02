@@ -1,0 +1,110 @@
+.rating {
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.filled-star {
+  color: #f5c518;
+}
+
+.half-filled-star {
+  color: #f5c518;
+}
+
+.empty-star {
+  color: #ccc;
+}
+
+.rating-text {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+
+/* Review Card */
+.review-card-container {
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 25px;
+  }
+  
+  .review-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+    height: 185px; /* Fixed height for the review card */
+    /* overflow-y: auto;  */
+  }
+  
+  .review-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .review-card-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .review-user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+  }
+  
+  .review-user-info {
+    flex: 1;
+  }
+  
+  .user-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .user-rating {
+    font-size: 0.9rem;
+    color: #ffb400;
+  }
+  
+  .review-comment {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 10px;
+    max-height: 100px; /* Fixed height for the comment section */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 5px;
+  }
+
+  .review-comment::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .review-comment::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 5px;
+  }
+  
+  .comment-text {
+    font-style: italic;
+  }
+  
+  .review-photo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .review-photo-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }

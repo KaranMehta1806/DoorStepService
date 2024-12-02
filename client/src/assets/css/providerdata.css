@@ -1,0 +1,29 @@
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background-color: #002434;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .table th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .table td {
+    vertical-align: middle;
+    font-size: 0.95rem;
+  }
+  
+  .btn {
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
