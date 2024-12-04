@@ -501,7 +501,7 @@ export default function UserProfile() {
                     >
                       <img
 
-                        src={userdata.photo? (`${Server_URL2}${userdata.photo}`) : '/photo1.png'}
+                        src={userdata.photo ? userdata.photo : '/photo1.png'}
                         alt="Profile"
                         className="img-fluid w-100 h-100 object-fit-cover"
                       />

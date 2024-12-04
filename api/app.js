@@ -8,14 +8,14 @@ const {userAuthMiddleware} = require("./middlewares/userAuthMiddleware ");
 const providerController = require('./controller/serviceProviderController');
 const userController = require('./controller/userController');
 const fileUpload = require("express-fileupload")
-require('dotenv').config();
 
 // const {userAuthMiddleware} = require("./middlewares/authMiddleware");
 
 
 
 app.use(cors());
-app.use(fileUpload());
+app.use(fileUpload( {useTempFiles: true,           // Enable temporary files
+  tempFileDir: '/tmp/'}));
 app.use(express.json());
 app.use(express.static("public"));
 

@@ -197,7 +197,7 @@ export default function EditProvider() {
                     cursor="pointer"
                     src={
                       provider.photo
-                        ? Server_URL2 + provider.photo
+                        ? provider.photo
                         : "/photo1.png"
                     }
                     alt="Uploaded"

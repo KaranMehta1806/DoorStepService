@@ -3,6 +3,8 @@ const { ObjectId } = require("mongodb");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "12345@abcd12";
 const { generateOTP, sendOTPEmail } = require('../utils/otpUtils');
+const cloudinary = require('../utils/CloudConfig');
+
 
 
 const providerController = {};
@@ -524,21 +526,36 @@ providerController.ProviderUpdatePhoto = async (req, res) => {
     const filter = { _id: new ObjectId(id) };
     const { photo } = req.files;
     
-    const dbPath = '/images/' + photo.name;
-    const serverPath = 'public/images/' + photo.name;
+
+    const result = await cloudinary.uploader.upload(photo.tempFilePath, {
+      folder: "DoorStepService"  // Specify the folder name here
+    });
+    const imageUrl = result.secure_url;
+    const updateResult = await db.collection("ServiceProvider").updateOne(filter, { 
+      $set: { photo: imageUrl } 
+    });
+
+    if (!updateResult.modifiedCount) {
+      return res.json({ error: true, message: 'Failed to update photo.' });
+    }
+
+      res.json({ error: false, message: 'Photo uploaded and updated successfully' })
+
+    // const dbPath = '/images/' + photo.name;
+    // const serverPath = 'public/images/' + photo.name;
 
 
-    photo.mv(serverPath, (e) => {
-      if (e) {
-        return res.json({ error: true, message: e.message });
-      }
-      const updatepath = db.collection("ServiceProvider").updateOne(filter, { $set: { photo: dbPath } })
-      if (e) {
-        return res.json({ error: true, message: e.message });
-      }
+    // photo.mv(serverPath, (e) => {
+    //   if (e) {
+    //     return res.json({ error: true, message: e.message });
+    //   }
+    //   const updatepath = db.collection("ServiceProvider").updateOne(filter, { $set: { photo: dbPath } })
+    //   if (e) {
+    //     return res.json({ error: true, message: e.message });
+    //   }
 
-      res.json({ error: false, message: 'photo uploaded successfully' })
-    })
+    //   res.json({ error: false, message: 'photo uploaded successfully' })
+    // })
 
   } catch (e) {
     res.json({ error: true, message: e.message });

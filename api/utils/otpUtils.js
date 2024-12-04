@@ -8,6 +8,10 @@ function generateOTP() {
 
 
   async function sendOTPEmail(email, otp) {
+    console.log('process.env.EMAIL_USER')
+    console.log(process.env.EMAIL_USER)
+console.log(process.env.EMAIL_PASS)
+console.log(process.env.EMAIL_SERVICE)
     // Create a transporter object
     let transporter = nodemailer.createTransport({
       service: process.env.EMAIL_SERVICE,
