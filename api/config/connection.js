@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
-
-const dbURI = "mongodb://0.0.0.0:27017";
+require('dotenv').config();
+// const dbURI = "mongodb://0.0.0.0:27017";
+const dbURI = process.env.ATLASDB_URL;
 const client = new MongoClient(dbURI);
 
 async function connectToDatabase() {
@@ -14,7 +15,8 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-const dbName = "HomeAssist"; // Replace with your database name
+const dbName = "HomeAssist";
 let db = client.db(dbName)
 
 module.exports = db;
+
