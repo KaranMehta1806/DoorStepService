@@ -15,6 +15,7 @@ axios.get(`${Server_URL}test-cors`)
     console.log(response.data);  // { message: 'CORS is working!' }
   })
   .catch(error => {
+    console.error("error occured");
     console.error('Error:', error);
   });
   const [category, setCategory] = useState([]);
