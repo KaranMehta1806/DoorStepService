@@ -1,25 +1,10 @@
-/* .custom-table tr:hover {
-  background-color: #f4f4f4; 
-}
 
-.custom-table .custom-btn {
-  border-color: #FF5B4A;
-  color: #004b8d;
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  border-radius: 8px;
-}
-
-.custom-table .custom-btn:hover {
-  background-color: #002434;
-  color: white;
-} */
 .custom-card {
   border-radius: 12px;
   border: none;
   overflow: hidden;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for modern look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .custom-card-body {
@@ -34,10 +19,9 @@
   margin-bottom: 20px;
 }
 
-/* Service Provider and Customer Cards */
 .service-card, .customer-card {
   background-color: #fff;
-  border-left: 5px solid #FF5B4A; /* A blue border for emphasis */
+  border-left: 5px solid #FF5B4A;
 }
 
 .service-card .custom-card-title, .customer-card .custom-card-title {
@@ -45,7 +29,6 @@
   font-weight: 600;
 }
 
-/* Address Section Styling */
 .custom-address {
   background-color: #f7f7f7;
   padding: 15px;
@@ -58,7 +41,6 @@
   font-size: 1.05rem;
 }
 
-/* Table Styling for Time Slots (optional) */
 .custom-table {
   width: 100%;
   border-collapse: collapse;
@@ -92,16 +74,15 @@
 
 
 .custom-table-scroll {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
-  margin-bottom: 1.5rem; /* Space below the table */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
   border-radius: 12px;
 }
 
-/* Responsive Table Adjustments */
 .custom-table {
   width: 100%;
-  min-width: 800px; /* Minimum width to ensure proper column visibility */
+  min-width: 800px; 
   border-collapse: collapse;
   margin-bottom: 2rem;
   border-radius: 12px;
@@ -120,14 +101,14 @@
 .custom-table th {
   background-color: #002434;
   color: white;
-  font-size: 0.9rem; /* Smaller font size for small screens */
+  font-size: 0.9rem; 
   font-weight: bold;
 }
 
 .custom-table td {
   background-color: #fff;
   color: #555;
-  font-size: 0.85rem; /* Adjusted font size for better readability */
+  font-size: 0.85rem;
 }
 
 .custom-table tr:hover {
@@ -147,7 +128,7 @@
   color: white;
 }
 
-/* Responsive Design for Small Screens */
+
 @media (max-width: 767px) {
   .custom-col-lg-6 {
     flex: 1 0 100%;
@@ -158,12 +139,12 @@
   }
 
   .custom-table {
-    min-width: 600px; /* Reduce min-width for very small screens */
+    min-width: 600px; 
   }
 
   .custom-table th,
   .custom-table td {
-    padding: 8px; /* Reduce padding for small screens */
+    padding: 8px; 
     font-size: 0.8rem;
   }
 
