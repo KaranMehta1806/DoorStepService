@@ -372,7 +372,7 @@ export default function publicHome() {
                     style={{ height: "200px", overflow: "hidden" }}
                   >
                     <img
-                      src={x.photo ? Server_URL2 + x.photo : "/photo1.png"}
+                      src={x.photo ? x.photo : "/photo1.png"}
                       alt="images"
                       style={{
                         width: "100%",
@@ -613,7 +613,7 @@ export default function publicHome() {
                     style={{ height: "200px", overflow: "hidden" }}
                   >
                     <img
-                      src={x.photo ? `${Server_URL2}${x.photo}` : "/photo1.png"}
+                      src={x.photo ? x.photo : "/photo1.png"}
                       alt="category"
                       style={{
                         width: "100%",
