@@ -11,14 +11,7 @@ export default function publicHome() {
   console.log(Server_URL);
 
 
-axios.get('https://door-step-service.vercel.app/test-cors')
-  .then(response => {
-    console.log(response.data);  // { message: 'CORS is working!' }
-  })
-  .catch(error => {
-    console.error("error occured");
-    console.error('Error:', error);
-  });
+
   const [category, setCategory] = useState([]);
   const [providers, setProviders] = useState([]);
   const [feedback, setFeedback] = useState([]);
