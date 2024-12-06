@@ -81,7 +81,8 @@ export default function publicHome() {
   }
 
   useEffect(() => {
-    ReadCategory(), ReadProviders()
+    ReadCategory()
+    //  ReadProviders()
     // ReadFeedback();
   }, []);
 
@@ -441,157 +442,9 @@ export default function publicHome() {
       </div>
       {/* <!-- End Watch Video Area --> */}
 
-      {/* <!-- Start Our Pricing Area --> */}
-      {/* <div className="pricing-area pt-100 pb-70">
-            <div className="container">
-                <div className="section-title">
-                    <span className="top-title">Our Pricing</span>
-                    <h2>Our Price Is Affordable</h2>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-lg-4 col-sm-6 col-md-6">
-                        <div className="single-pricing-card" datacue="fadeIn" dataduration="1000">
-                            <div className="basic-plan">
-                                <span>Basic Plan</span>
-                                <h3>$80.00</h3>
-                                <p>Per Month</p>
-                            </div>
-                            <div className="pricing-list">
-                                <ul>
-                                    <li>Fully Professional Cleaner<i className='bx bx-check-circle' ></i></li>
-                                    <li>Living Room Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Bed Room Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Bathroom Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li><del>Windows & Door Cleaning</del><i className='bx bx-check-circle bg-color1' ></i></li>
-                                    <li><del>Roof Cleaning</del><i className='bx bx-check-circle bg-color1' ></i></li>
-                                    <li><del>Kitchen Cleaning</del><i className='bx bx-check-circle bg-color1' ></i></li>
-                                </ul>
-                            </div>
-                            <a href="pricing.html" className="default-btn btn-style-one">Get Now</a>
-                            <div className="pricing-shape">
-                                <img src="assets/images/pricing-shape.png" alt="images" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-sm-6 col-md-6">
-                        <div className="single-pricing-card" datacue="fadeIn" dataduration="2000">
-                            <div className="basic-plan">
-                                <span>Smart Plan</span>
-                                <h3>$150.00</h3>
-                                <p>Per Month</p>
-                            </div>
-                            <div className="pricing-list">
-                                <ul>
-                                    <li>Fully Professional Cleaner<i className='bx bx-check-circle' ></i></li>
-                                    <li>Living Room Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Bed Room Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Bathroom Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Windows & Door Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li><del>Roof Cleaning</del><i className='bx bx-check-circle bg-color1' ></i></li>
-                                    <li><del>Kitchen Cleaning</del><i className='bx bx-check-circle bg-color1' ></i></li>
-                                </ul>
-                            </div>
-                            <a href="pricing.html" className="default-btn btn-style-one">Get Now</a>
-                            <div className="pricing-shape">
-                                <img src="assets/images/pricing-shape.png" alt="images" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-sm-6 col-md-6">
-                        <div className="single-pricing-card" datacue="fadeIn" dataduration="3000">
-                            <div className="basic-plan">
-                                <span>Silver Plan</span>
-                                <h3>$250.00</h3>
-                                <p>Per Month</p>
-                            </div>
-                            <div className="pricing-list">
-                                <ul>
-                                    <li>Fully Professional Cleaner<i className='bx bx-check-circle' ></i></li>
-                                    <li>Living Room Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Bed Room Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Bathroom Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Windows & Door Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Roof Cleaning<i className='bx bx-check-circle' ></i></li>
-                                    <li>Kitchen Cleaning<i className='bx bx-check-circle' ></i></li>
-                                </ul>
-                            </div>
-                            <a href="pricing.html" className="default-btn btn-style-one">Get Now</a>
-                            <div className="pricing-shape">
-                                <img src="assets/images/pricing-shape.png" alt="images" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="pricing-shape-two" datacue="bounceIn" dataduration="800">
-                <img src="assets/images/pricing-shape-2.png" alt="images" />
-            </div>
-        </div> */}
-      {/* <!-- End Our Pricing Area --> */}
+     
 
-      {/* <div className="how-works-area pt-100 pb-70">
-            <div className="container">
-                <div className="section-title">
-                    <span className="top-title top-title-three"><i className="flaticon-flash"></i>HOW WE WORK</span>
-                    <h2>Our Working Process</h2>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-lg-4 col-sm-6 col-sm-4" datacue="zoomIn" dataduration="1000">
-                        <div className="how-work-content">
-                            <div className="works-icon">
-                                <i className="flaticon-guru"></i>
-                            </div>
-                            <h3><b>01.</b>Select Our Service</h3>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-sm-6 col-sm-4" datacue="zoomIn" dataduration="1500">
-                        <div className="how-work-content">
-                            <div className="works-icon">
-                                <i className="flaticon-planning"></i>
-                            </div>
-                            <h3><b>02.</b>Select Our ServiceProviders</h3>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-sm-6 col-sm-4" datacue="zoomIn" dataduration="2000">
-                        <div className="how-work-content">
-                            <div className="works-icon">
-                                <i className="flaticon-click"></i>
-                            </div>
-                            <h3><b>03.</b>Book a Service</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="how-work-shape-1">
-                <img src="assets/images/how-works-shape-2.png" alt="images" />
-            </div>
-            <div className="how-work-shape-2">
-                <img src="assets/images/how-works-shape-3.png" alt="images"/>
-            </div>
-            <div className="how-work-shape-3"> 
-                <img src="assets/images/how-works-shape-1.png" alt="images" />
-            </div>
-        </div> */}
-
-      {/* <div class="find-electrician-area pt-100 pb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <div class="single-find-electrician-content">
-                            <div class="section-title section-title-left">
-                                <span class="top-title top-title-three"><i class="flaticon-flash"></i>FIND ELECTRICIAN</span>
-                                <h2>Need To Find A Reliable Electrician</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="find-electrician-btn">
-                            <a href="contact.html" class="default-btn btn-style-fore">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> */}
+     
 
       {/* <!-- Start Our Team Area --> */}
       <div className="team-area pt-100 pb-100">
