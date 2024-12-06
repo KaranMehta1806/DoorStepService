@@ -28,7 +28,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
 
 
     try {
-      const url = Server_URL + "provider/managecategory";
+      const url = 'https://door-step-service.vercel.app/provider/managecategory';
       const response = await axios.get(url);
       // console.log(response.data);
 
@@ -46,7 +46,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
   }
   async function ReadProviders() {
     try {
-      const url = Server_URL + "providerinfo";
+      const url = 'https://door-step-service.vercel.app/providerinfo';
       const response = await axios.get(url);
       // console.log(response.data);
 
@@ -93,7 +93,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
   }
 
   useEffect(() => {
-    // ReadCategory()
+    ReadCategory()
     //  ReadProviders()
     // ReadFeedback();
   }, []);
@@ -366,7 +366,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
       {/* <!-- End About Style One Area --> */}
 
       {/* <!-- Start Our Services area --> */}
-      {/* <div className="services-area pt-100 pb-100">
+      <div className="services-area pt-100 pb-100">
         <div className="container">
           <div className="section-title">
             <span className="top-title">Our Services</span>
@@ -420,7 +420,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
             </Link>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* <!-- End Our Services area --> */}
 
       {/* <!-- Start Watch Video Area -->  */}
