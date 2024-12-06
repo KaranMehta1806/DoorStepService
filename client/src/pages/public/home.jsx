@@ -81,7 +81,8 @@ export default function publicHome() {
   }
 
   useEffect(() => {
-    ReadCategory(), ReadProviders(),ReadFeedback();
+    ReadCategory(), ReadProviders()
+    // ReadFeedback();
   }, []);
 
   return (
@@ -625,26 +626,22 @@ export default function publicHome() {
                     <h3>{x.fullName}</h3>
                     <p>{x.subCategoryInfo}</p>
 
-                    <div className="rating">
+                    {/* <div className="rating">
   {Array.from({ length: 5 }, (_, i) => {
     const rating = x.feedbackRating;
     if (i < Math.floor(rating)) {
-      // Full star
       return <i key={i} className="fas fa-star filled-star"></i>;
     } else if (i < rating) {
-      // Half star
       return <i key={i} className="fas fa-star-half-alt half-filled-star"></i>;
     } else {
-      // Empty star
       return <i key={i} className="far fa-star empty-star"></i>;
     }
   })}
-  {/* Display the rating count with appropriate formatting */}
   <span className="rating-text">
     ({Number.isInteger(x.feedbackRating) ? x.feedbackRating : x.feedbackRating.toFixed(1)} Star
     {x.feedbackRating > 1 ? "s" : ""})
   </span>
-</div>
+</div> */}
                     <ul className="team-list">
                       <li>
                         <a href="https://www.facebook.com/" target="_blank">
@@ -689,10 +686,9 @@ export default function publicHome() {
       </div>
       {/* <!-- End Our Team Area --> */}
 
-      <div className="services-area pt-100 pb-100">
+      {/* <div className="services-area pt-100 pb-100">
         <div className="container">
           <div className="section-title">
-            {/* <h1 className="top-title">Our Top Reviews</h1> */}
             <h2>Our Top Reviews</h2>
           </div>
           <div className="row ">
@@ -700,11 +696,9 @@ export default function publicHome() {
             <div className="review-card-container" key={index}>
             <div className="review-card shadow-sm">
               <div className="review-card-header d-flex align-items-center mb-3">
-                {/* User Photo */}
                 <img
                   src="/photo1.png"
                   alt="images"
-                  // alt="User"
                   className="review-user-photo"
                 />
                 <div className="review-user-info ms-3">
@@ -715,34 +709,17 @@ export default function publicHome() {
                   ></div>
                 </div>
               </div>
-
-              {/* Review Comment */}
               <div className="review-comment mt-2">
                 <p className="comment-text">
                   {x.comments}                  
                  </p>
               </div>
-
-              {/* Optional Photo Column
-   {review.photo && (
-     <div className="review-photo mt-2">
-       <img src={review.photo} alt="Review" className="review-photo-img" />
-     </div>
-   )} */}
             </div>
           </div>
-              
             ))}
-            
-            
           </div>
-          {/* <div className="view-all-btn">
-            <Link className="default-btn btn-style-one" to="/allcategory">
-              View All
-            </Link>
-          </div> */}
         </div>
-      </div>
+      </div> */}
 
       
 
