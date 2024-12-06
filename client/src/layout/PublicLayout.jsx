@@ -6,7 +6,7 @@ import Footer from "../components/Footer"
 import { ToastContainer } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { utilityFunctions } from "../utils/module";
-import { useAuth } from "../pages/commonpages/authcontext";
+import { useAuth } from "../pages/commonpages/AuthContext";
 
 export default function PublicLayout() {
   const { isAuthenticated } = useAuth();
