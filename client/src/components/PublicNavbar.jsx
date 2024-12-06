@@ -122,7 +122,7 @@ export default function PublicNavbar() {
                   alt="images"
                 />
                 <img
-                  src="/HomeAssist6.png"
+                  src="/HomeAssist7.png"
                   className="logo-dark"
                   alt="images"
                 />
