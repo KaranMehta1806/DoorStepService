@@ -8,6 +8,7 @@ import "../../assets/css/rating.css";
 // import "../../assets/css/"
 
 export default function publicHome() {
+  console.log(Server_URL);
 
 
 axios.get('https://door-step-service.vercel.app/test-cors')
