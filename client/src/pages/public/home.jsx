@@ -81,8 +81,8 @@ export default function publicHome() {
   }
 
   useEffect(() => {
-    ReadCategory()
-    //  ReadProviders()
+    // ReadCategory()
+     ReadProviders()
     // ReadFeedback();
   }, []);
 
@@ -354,7 +354,7 @@ export default function publicHome() {
       {/* <!-- End About Style One Area --> */}
 
       {/* <!-- Start Our Services area --> */}
-      <div className="services-area pt-100 pb-100">
+      {/* <div className="services-area pt-100 pb-100">
         <div className="container">
           <div className="section-title">
             <span className="top-title">Our Services</span>
@@ -406,10 +406,9 @@ export default function publicHome() {
             <Link className="default-btn btn-style-one" to="/allcategory">
               View All
             </Link>
-            {/* <a href="services.html" className="default-btn btn-style-one">View All</a> */}
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- End Our Services area --> */}
 
       {/* <!-- Start Watch Video Area -->  */}
