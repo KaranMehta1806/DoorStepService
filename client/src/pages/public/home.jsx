@@ -29,7 +29,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
 
 
     try {
-      const url = 'https://door-step-service.vercel.app/provider/managecategory';
+      const url =Server_URL + 'provider/managecategory';
       const response = await axios.get(url);
       // console.log(response.data);
 
