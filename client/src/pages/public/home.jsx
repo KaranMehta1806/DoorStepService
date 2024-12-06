@@ -47,7 +47,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
   }
   async function ReadProviders() {
     try {
-      const url = 'https://door-step-service.vercel.app/providerinfo';
+      const url =Server_URL +  'providerinfo';
       const response = await axios.get(url);
       // console.log(response.data);
 
@@ -95,8 +95,8 @@ axios.get('https://door-step-service.vercel.app/test-cors')
 
   useEffect(() => {
     ReadCategory()
-    //  ReadProviders()
-    // ReadFeedback();
+     ReadProviders()
+    ReadFeedback();
   }, []);
 
   return (
@@ -459,7 +459,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
      
 
       {/* <!-- Start Our Team Area --> */}
-      {/* <div className="team-area pt-100 pb-100">
+      <div className="team-area pt-100 pb-100">
         <div className="container">
           <div className="section-title">
             <span className="top-title">Our Team</span>
@@ -548,10 +548,10 @@ axios.get('https://door-step-service.vercel.app/test-cors')
             </Link>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* <!-- End Our Team Area --> */}
 
-      {/* <div className="services-area pt-100 pb-100">
+      <div className="services-area pt-100 pb-100">
         <div className="container">
           <div className="section-title">
             <h2>Our Top Reviews</h2>
@@ -584,7 +584,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
 
       
 
