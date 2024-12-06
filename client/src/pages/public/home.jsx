@@ -94,9 +94,9 @@ axios.get('https://door-step-service.vercel.app/test-cors')
   }
 
   useEffect(() => {
-    ReadCategory()
+    ReadCategory(),
      ReadProviders()
-    ReadFeedback();
+    // ReadFeedback();
   }, []);
 
   return (
@@ -491,7 +491,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
                     <h3>{x.fullName}</h3>
                     <p>{x.subCategoryInfo}</p>
 
-                    <div className="rating">
+                    {/* <div className="rating">
   {Array.from({ length: 5 }, (_, i) => {
     const rating = x.feedbackRating;
     if (i < Math.floor(rating)) {
@@ -506,7 +506,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
     ({Number.isInteger(x.feedbackRating) ? x.feedbackRating : x.feedbackRating.toFixed(1)} Star
     {x.feedbackRating > 1 ? "s" : ""})
   </span>
-</div>
+</div> */}
                     <ul className="team-list">
                       <li>
                         <a href="https://www.facebook.com/" target="_blank">
@@ -551,7 +551,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
       </div>
       {/* <!-- End Our Team Area --> */}
 
-      <div className="services-area pt-100 pb-100">
+      {/* <div className="services-area pt-100 pb-100">
         <div className="container">
           <div className="section-title">
             <h2>Our Top Reviews</h2>
@@ -584,7 +584,7 @@ axios.get('https://door-step-service.vercel.app/test-cors')
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       
 
