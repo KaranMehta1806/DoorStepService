@@ -27,7 +27,7 @@ export default function Footer() {
   }
 
   useEffect(() => {
-    ReadCategory();
+    // ReadCategory();
   }, []);
   return (
     <>
@@ -135,7 +135,7 @@ export default function Footer() {
                     dataduration="1300"
                   >
                     <h2>Our Services</h2>
-                    <ul className="list-widget">
+                    {/* <ul className="list-widget">
                       {category.slice(0, 5).map((x, index) => (
                         <li key={index}>
                           <Link to="/allcategory">
@@ -144,21 +144,9 @@ export default function Footer() {
                           </Link>
                         </li>
                       ))}
-                      {/* <a href="services-details.html"><i className='bx bx-arrow-back' ></i>Carpet Cleaning</a> */}
 
-                      {/* <li>
-                                            <a href="services-details.html"><i className='bx bx-arrow-back' ></i>Plumbing Services</a>
-                                        </li>
-                                        <li>
-                                            <a href="services-details.html"><i className='bx bx-arrow-back' ></i>Home Cleaning</a>
-                                        </li>
-                                        <li>
-                                            <a href="services-details.html"><i className='bx bx-arrow-back' ></i>Office Services</a>
-                                        </li>
-                                        <li>
-                                            <a href="services-details.html"><i className='bx bx-arrow-back' ></i>Glass Cleaning</a>
-                                        </li> */}
-                    </ul>
+                      
+                    </ul> */}
                   </div>
                 </div>
                 <div className="col-lg-4 col-sm-6 col-md-4">
