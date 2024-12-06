@@ -21,7 +21,6 @@ export default function signup() {
     setValue,
     watch
   } = useForm();
-  // const navigate = useNavigate();
 
   useEffect(() => {
     ReadCategory();
@@ -32,26 +31,19 @@ export default function signup() {
   async function readState() {
     const url = Server_URL + "provider/state";
     const response = await axios.get(url);
-    // console.log(response.data);
 
     const { error, message } = response.data;
     if (error) {
       alert(message);
     } else {
       const { result } = response.data;
-      // console.log(result)
       setState(result);
     }
   }
 
-  // useEffect(() => {
-  //   readState();
-  // }, []);
-
   async function readCity(catId) {
     const url = Server_URL + "provider/city/" + catId;
     const response = await axios.get(url);
-    // console.log(response.data);
 
     const { error, message } = response.data;
     if (error) {
@@ -85,14 +77,12 @@ export default function signup() {
   async function ReadCategory() {
     const url = Server_URL + "provider/managecategory";
     const response = await axios.get(url);
-    // console.log(response.data);
 
     const { error, message } = response.data;
     if (error) {
       alert(message);
     } else {
       const { result } = response.data;
-      // console.log(result)
       setCategory(result);
     }
   }
@@ -102,7 +92,6 @@ export default function signup() {
   async function ReadSubCategory(catId) {
     const url = Server_URL + "managesubcategory/" + catId;
     const response = await axios.get(url);
-    // console.log(response.data);
 
     const { error, message } = response.data;
     if (error) {
@@ -118,27 +107,15 @@ export default function signup() {
 
   async function registerServiceProvider(data) {
     try {
-      // const token = utilityFunctions.getCookieValue('adminAuthToken')
       const url = Server_URL + "serviceprovider";
       const response = await axios.post(url, data
-    //     ,{
-    //     headers:{
-    //         Authorization:token ? `Bearer ${token}` : ""
-    //     }
-    // }
   );
-      // console.log(response.data);
       const { error, message } = response.data;
-      // if (error && message === "SignIn") {
-      //   navigate("/admin-login")
-      // }
       if(error){
         showErrorToast(message);
       } else {
         showSuccessToast(message);
         reset();
-        // getAdminData()
-        // navigate('/user/signin');
       }
     } catch (error) {
       showErrorToast(error.message);
@@ -183,9 +160,8 @@ export default function signup() {
       },
     })}
     onBlur={(e) => {
-      // Remove leading and trailing spaces
       e.target.value = e.target.value.trim();
-      setValue("fullName", e.target.value); // Update value with modified input
+      setValue("fullName", e.target.value); 
     }}
     />
   </div>

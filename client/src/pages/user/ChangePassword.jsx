@@ -42,60 +42,7 @@ export default function UserChangePassword() {
 
   return (
     <>
-      {/* <div className="container py-5">
-        <div className="row">
-          <div className="col-md-8 offset-md-2 ">
-            <div className="card shadow-lg">
-              <div className="card-header bg-dark text-white py-2">
-                Change Password
-              </div>
-              <div className="card-body">
-                <form onSubmit={handleSubmit(ChangePassword)}>
-                  <div className="mb-2">
-                  <label className="form-label">Current Password</label>
-                <input
-                  {...register("currentpassword", { required: true })}
-                  className="form-control"
-                  type="password"
-                  placeholder="Enter your current password"
-                />
-                {errors.currentpassword && (
-                  <p className="text-danger">This field is required</p>
-                )}
-                  </div>
-                  <div className="mb-3">
-                <label className="form-label">New Password</label>
-                <input
-                  {...register("password", { required: true })}
-                  className="form-control"
-                  type="password"
-                  placeholder="Enter your new password"
-                />
-                {errors.password && (
-                  <p className="text-danger">This field is required</p>
-                )}
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Confirm Password</label>
-                <input
-                  {...register("confirmpassword", { required: true })}
-                  className="form-control"
-                  type="password"
-                  placeholder="Repeat your password"
-                />
-                {errors.confirmpassword && (
-                  <p className="text-danger">This field is required</p>
-                )}
-              </div>
-                 
-
-                  <button className="btn btn-success mt-2">Update</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>       */}
+     
 
 <div className="my-account-area pt-100 pb-70">
   <div className="container">

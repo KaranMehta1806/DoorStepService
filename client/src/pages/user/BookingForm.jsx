@@ -75,7 +75,7 @@ const handleFormSubmit = (data) => {
   let selectedSlotsCount = 0;
   slots.forEach((slot, index) => {
     if (data[`slots${index}`]) {
-      selectedSlotsCount++; // Increment count for each selected slot
+      selectedSlotsCount++;
     }
   });
   const totalPrice = selectedSlotsCount * slotPrice;
@@ -89,7 +89,6 @@ const handleFormSubmit = (data) => {
       totalPrice,
       slots: slots
       .map((slot, index) => {
-        // If the slot is selected (checkbox checked), include the start and end times
         if (data[`slots${index}`]) {
           return {
             start: slot.start,
@@ -102,7 +101,6 @@ const handleFormSubmit = (data) => {
       .filter(Boolean),
   };
   onSubmit(transformedData);
-  // console.log("Form Submission Data:", transformedData); // Pass the complete data for insertion
 };
 
 

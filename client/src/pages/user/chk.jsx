@@ -9,7 +9,7 @@ import { utilityFunctions } from "../../../utils/Module";
 import { Server_URL, Server_URL2 } from "../../../utils/config";
 import { showErrorToast, showSuccessToast } from "../../../utils/toast";
 import { Container, Row, Col } from 'react-bootstrap';
-import './Updateserviceprovider.css'; // Import the external CSS file
+import './Updateserviceprovider.css'; 
 
 function Updateserviceprovider() {
   const navigate = useNavigate();
@@ -51,8 +51,6 @@ function Updateserviceprovider() {
   }, [getSingleprovider]);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
-
-  // Ensure the form resets only after the category data is fetched
   useEffect(() => {
     if (category) {
       reset(category);

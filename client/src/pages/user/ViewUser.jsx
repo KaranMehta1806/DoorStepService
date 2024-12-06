@@ -4,12 +4,6 @@ import { useState, useEffect, useContext } from "react";
 import { utilityFunctions } from "../../utils/module";
 import { useNavigate } from "react-router-dom";
 import { showSuccessToast, showErrorToast } from '../../utils/toasthelper';
-// import { FaTrash } from "react-icons/fa";
-// import { CiEdit } from "react-icons/ci";
-// import Modal from "react-bootstrap/Modal";
-// import EditForm from "./users/EditForm";
-// import { userContext } from "../App";
-// import { useNavigate } from "react-router-dom";
 import { Server_URL } from "../../utils/config";
 
 
@@ -28,9 +22,7 @@ export default function viewUser() {
             Authorization:token ? `Bearer ${token}` : ""
         }
     });
-      // console.log(response.data);
       const { error, message } = response.data;
-      // console.log(error,message);
       if (error && message === "SignIn") {
         navigate("/user/login")
       }
@@ -39,7 +31,6 @@ export default function viewUser() {
       } else {
         const { result } = response.data;
           setAdmin(result);
-          // alert("Data Fetched Successfully")
       }
     } catch (error) {
       showErrorToast(error.message);

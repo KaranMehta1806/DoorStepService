@@ -40,7 +40,6 @@ const AddCity = lazy(() => import("./pages/admin/city/AddCity.jsx"));
 const ViewCity = lazy(() => import("./pages/admin/city/ViewCity.jsx"));
 const UserLayout = lazy(() => import("./layout/UserLayout .jsx"));
 const UserProfile = lazy(() => import("./pages/user/UserProfile.jsx"));
-// const UserProfile = lazy(() => import("./pages/user/BookingForm.jsx"));
 const UserForgotPassword = lazy(() => import("./pages/user/UserForgotPassword/ForgotPassword.jsx"));
 const UserVerifyOTP = lazy(() => import("./pages/user/UserForgotPassword/VerifyOTP.jsx"));
 const UserUpdatePassword = lazy(() => import("./pages/user/UserForgotPassword/UpdatePassword.jsx"));
@@ -77,12 +76,6 @@ const MyOrder = lazy(() => import("./pages/user/MyOrder.jsx"));
 const OrderDetails = lazy(() => import("./pages/user/OrderDetails.jsx"));
 const UserChangePassword = lazy(() => import("./pages/user/ChangePassword.jsx"));
 const ContactUs = lazy(() => import("./pages/public/contactus.jsx"));
-// import serviceProviderDashboard from "./pages/service_provider/ProviderDashboard/Dashboard.jsx";
-
-
-// const AdminDashboard = lazy(() => import("./pages/public/contactus.jsx"));
-
-// import Dashboard from "./pages/admin/AdminDashboard/Dashboard.jsx";
 
 
 

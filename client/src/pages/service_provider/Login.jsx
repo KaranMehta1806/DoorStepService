@@ -5,11 +5,6 @@ import { utilityFunctions } from "../../utils/module";
 import { showSuccessToast, showErrorToast } from '../../utils/toasthelper';
 import { Link } from "react-router-dom";
 import BannerArea from "../commonpages/BannerArea";
-// import { FaTrash } from "react-icons/fa";
-// import { CiEdit } from "react-icons/ci";
-// import Modal from "react-bootstrap/Modal";
-// import EditForm from "./users/EditForm";
-// import { userContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { Server_URL } from "../../utils/config";
 
