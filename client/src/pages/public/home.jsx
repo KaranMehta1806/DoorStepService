@@ -8,6 +8,15 @@ import "../../assets/css/rating.css";
 // import "../../assets/css/"
 
 export default function publicHome() {
+
+
+axios.get(`${Server_URL}test-cors`)
+  .then(response => {
+    console.log(response.data);  // { message: 'CORS is working!' }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
   const [category, setCategory] = useState([]);
   const [providers, setProviders] = useState([]);
   const [feedback, setFeedback] = useState([]);
@@ -15,6 +24,8 @@ export default function publicHome() {
   const navigate = useNavigate();
 
   async function ReadCategory() {
+
+
     try {
       const url = Server_URL + "provider/managecategory";
       const response = await axios.get(url);

@@ -257,7 +257,9 @@ app.get("/getParticularFeedback/:pid",indexController.getParticularFeedback);
 
 
 
-
+app.get('/test-cors', (req, res) => {
+  res.json({ message: 'CORS is working!' });
+});
 
 
 
