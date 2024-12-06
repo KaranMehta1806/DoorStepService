@@ -12,7 +12,7 @@ const fileUpload = require("express-fileupload")
 // const {userAuthMiddleware} = require("./middlewares/authMiddleware");
 
 const corsOptions = {
-  origin: 'https://door-step-service-client.vercel.app/',
+  origin: 'https://door-step-service-client.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
