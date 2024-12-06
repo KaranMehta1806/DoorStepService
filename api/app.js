@@ -11,9 +11,13 @@ const fileUpload = require("express-fileupload")
 
 // const {userAuthMiddleware} = require("./middlewares/authMiddleware");
 
+const corsOptions = {
+  origin: 'https://door-step-service-client.vercel.app/',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+};
 
-
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(fileUpload( {useTempFiles: true,tempFileDir: '/tmp/'}));
 app.use(express.json());
 app.use(express.static("public"));
