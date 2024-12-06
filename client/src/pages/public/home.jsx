@@ -10,7 +10,7 @@ import "../../assets/css/rating.css";
 export default function publicHome() {
 
 
-axios.get(`${Server_URL}test-cors`)
+axios.get('https://door-step-service.vercel.app/test-cors')
   .then(response => {
     console.log(response.data);  // { message: 'CORS is working!' }
   })
