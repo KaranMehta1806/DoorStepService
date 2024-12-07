@@ -34,7 +34,7 @@ indexController.AdminRegistration = async (req, res) => {
       address:address,
       otp:""
     }
-    // const db = await connectToDatabase();
+    const db = await connectToDatabase();
 
     const collections = "admin";
     let result = await db.collection(collections).insertOne(document);
@@ -47,6 +47,7 @@ indexController.AdminRegistration = async (req, res) => {
 
 indexController.ViewAdmin = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "admin";
     let documents = await db.collection(collections).find().toArray();
     // console.log(documents);
@@ -62,6 +63,7 @@ indexController.ViewAdmin = async (req, res) => {
 
 indexController.DeleteAdmin = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "admin";
     const { id } = req.params;
     let filter = { _id: new ObjectId(id) };
@@ -76,6 +78,7 @@ indexController.chkAdminLogin = async (req, res) => {
   try {
     // console.log(req.body);
     const { email, password } = req.body;
+    const db = await connectToDatabase();
 
     const collections = "admin";
     const filter = {
@@ -115,6 +118,7 @@ indexController.chkAdminLogin = async (req, res) => {
 indexController.addCategory = async (req, res) => {
   try {
     console.log(req.body);
+    const db = await connectToDatabase();
     const collections = "category";
     const { categoryName,description,fullDescription} = req.body;
     const document = {
@@ -147,6 +151,7 @@ photo:""
 
 indexController.getCategory = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "category";
     let documents = await db.collection(collections).find().toArray();
     res.json({
@@ -161,6 +166,7 @@ indexController.getCategory = async (req, res) => {
 
 indexController.deleteCategory = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "category";
     const { id } = req.params;
     const filter1 = new ObjectId(id)
@@ -178,6 +184,7 @@ indexController.deleteCategory = async (req, res) => {
 
 indexController.editCategory = async (req,res) => {
   try {
+    const db = await connectToDatabase();
     const collection = "category"
     const {id} = req.params;
     await db.collection(collection).updateOne(
@@ -205,6 +212,7 @@ indexController.editCategory = async (req,res) => {
 
 indexController.addSubCategory = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "subcategory";
     const filter  = {
       subCategoryName: req.body.subcategoryName
@@ -230,6 +238,7 @@ indexController.addSubCategory = async (req, res) => {
 
 indexController.getSubCategory = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "subcategory";
     let documents = await db
       .collection(collections)
@@ -268,6 +277,7 @@ indexController.getSubCategory = async (req, res) => {
 
 indexController.deleteSubCategory = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "subcategory";
     const { id } = req.params;
     let filter2 = { _id: new ObjectId(id) };
@@ -288,6 +298,7 @@ indexController.deleteSubCategory = async (req, res) => {
 indexController.providerGetCity = async (req, res) => {
   try {
     const { id } = req.params;
+    const db = await connectToDatabase();
 
     const collections = "city";
     let filter = { stateId: new ObjectId(id) };
@@ -307,6 +318,7 @@ indexController.providerGetCity = async (req, res) => {
 
 indexController.providerGetState = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "state";
     let documents = await db.collection(collections).find().toArray();
     res.json({
@@ -322,6 +334,7 @@ indexController.providerGetState = async (req, res) => {
 indexController.readsubcat = async (req, res) => {
   try {
     const { id } = req.params;
+    const db = await connectToDatabase();
 
     const collections = "subcategory";
     let filter = { category: new ObjectId(id) };
@@ -356,6 +369,7 @@ indexController.providerGetCategory = async (req, res) => {
 
 indexController.addServiceProvider = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "ServiceProvider"
     console.log(req.body);
     const {
@@ -410,8 +424,9 @@ indexController.addServiceProvider = async (req, res) => {
 indexController.chkServiceProvider = async (req, res) => {
   try {
     // console.log(req.body);
-    const { email, password } = req.body;
 
+    const { email, password } = req.body;
+    const db = await connectToDatabase();
     const collections = "ServiceProvider";
     const filter = {
       email: email,
@@ -450,6 +465,7 @@ indexController.chkServiceProvider = async (req, res) => {
 
 indexController.serviceProviderInfo = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "ServiceProvider";
     let documents = await db.collection(collections).aggregate([
       {
@@ -526,6 +542,7 @@ indexController.serviceProviderInfo = async (req, res) => {
 
 indexController.deleteProviderInfo = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "ServiceProvider";
     const { id } = req.params;
     let filter = { _id: new ObjectId(id) };
@@ -538,6 +555,7 @@ indexController.deleteProviderInfo = async (req, res) => {
 
 indexController.userInfo = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "user";
     let documents = await db.collection(collections)
     .aggregate([   
@@ -588,6 +606,7 @@ indexController.userInfo = async (req, res) => {
 
 indexController.deleteUserInfo = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "user";
     const { id } = req.params;
     let filter = { _id: new ObjectId(id) };
@@ -602,7 +621,7 @@ indexController.updateStatus = async (req,res)=> {
   try {
     const{status} = req.body;  
     // console.log(status); 
-
+    const db = await connectToDatabase();
     const collections = "ServiceProvider";
     const { id } = req.params;
     let filter = { _id: new ObjectId(id) };
@@ -618,7 +637,7 @@ indexController.adminForgotPass = async (req, res) => {
   try {
     // console.log(req.body);
     const { email} = req.body;
-
+    const db = await connectToDatabase();
     const collections = "admin";
     const filter = {
       email: email
@@ -664,7 +683,7 @@ indexController.adminVerifyOTP = async (req, res) => {
   try {
     console.log(req.body);
     const { email, otp} = req.body;
-
+    const db = await connectToDatabase();
     const collections = "admin";
     const filter = {
       email: email
@@ -721,7 +740,7 @@ indexController.updatePassword = async (req, res) => {
   try {
     console.log(req.body);
     const { email, newPassword} = req.body;
-
+    const db = await connectToDatabase();
     const collections = "admin";
     const filter = {
       email: email
@@ -760,6 +779,7 @@ indexController.updatePassword = async (req, res) => {
 indexController.AdminAddState = async (req, res) => {
   try {
     console.log(req.body.statename);
+    const db = await connectToDatabase();
     const collections = "state";
     const filter = {
       stateName:req.body.stateName
@@ -777,6 +797,7 @@ indexController.AdminAddState = async (req, res) => {
 
 indexController.AdminReadState = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "state";
     let documents = await db.collection(collections).find().toArray();
     // console.log(documents);
@@ -792,6 +813,7 @@ indexController.AdminReadState = async (req, res) => {
 
 indexController.AdminDeleteState = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "state";
     const { id } = req.params;
     let filter = { _id: new ObjectId(id) };
@@ -804,6 +826,7 @@ indexController.AdminDeleteState = async (req, res) => {
 
 indexController.AdminAddCity = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "city";
     const filter  = {
       cityName: req.body.cityName
@@ -828,6 +851,7 @@ indexController.AdminAddCity = async (req, res) => {
 
 indexController.AdminReadCity = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "city";
     let documents = await db
       .collection(collections)
@@ -864,6 +888,7 @@ indexController.AdminReadCity = async (req, res) => {
 
 indexController.AdminDeleteCity = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "city";
     const { id } = req.params;
     let filter2 = { _id: new ObjectId(id) };
@@ -883,6 +908,7 @@ indexController.ViewSingleCategory = async (req, res) => {
   try {
     // console.log("working")
     const { id } = req.params;
+    const db = await connectToDatabase();
     // console.log(id);
     const collection = "category"
     let filter = { _id: new ObjectId(id) }
@@ -899,6 +925,7 @@ indexController.ViewSingleCategory = async (req, res) => {
 indexController.CategoryUpdatePhoto = async (req, res) => {
   try {
     const { id } = req.params;
+    const db = await connectToDatabase();
     const filter = { _id: new ObjectId(id) };
     const { photo } = req.files;
     const result = await cloudinary.uploader.upload(photo.tempFilePath, {
@@ -922,6 +949,7 @@ indexController.CategoryUpdatePhoto = async (req, res) => {
 
 indexController.SubCatProvider = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "ServiceProvider";
     const {id} = req.params;
     const filter = {
@@ -1120,9 +1148,8 @@ indexController.AllProviders = async (req, res) => {
 
 indexController.ViewSingleSubCategory = async (req, res) => {
   try {
-    // console.log("working")
     const { id } = req.params;
-    console.log(id);
+    const db = await connectToDatabase();
     const collection = "subcategory"
     let filter = { _id: new ObjectId(id) }
     // console.log(filter)
@@ -1138,6 +1165,7 @@ indexController.ViewSingleSubCategory = async (req, res) => {
 indexController.SubCategoryUpdatePhoto = async (req, res) => {
   try {
     const { id } = req.params;
+    const db = await connectToDatabase();
     const filter = { _id: new ObjectId(id) };
     const { photo } = req.files;
 
@@ -1164,6 +1192,7 @@ indexController.SubCategoryUpdatePhoto = async (req, res) => {
 
 indexController.editSubCategory = async (req,res) => {
   try {
+    const db = await connectToDatabase();
     const collection = "subcategory"
     const {id} = req.params;
     await db.collection(collection).updateOne(
@@ -1190,6 +1219,7 @@ indexController.editSubCategory = async (req,res) => {
 
 indexController.publicProvider = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "ServiceProvider";
     const {subid} = req.params;
     const filter = {
@@ -1317,6 +1347,7 @@ indexController.publicProvider = async (req, res) => {
 
 indexController.ViewBookingData = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collection = "Booking"
 
     let result = await db.collection(collection).aggregate([
@@ -1417,6 +1448,7 @@ indexController.ViewSingleState = async (req, res) => {
   try {
     // console.log("working")
     const { id } = req.params;
+    const db = await connectToDatabase();
     // console.log(id);
     const collection = "state"
     let filter = { _id: new ObjectId(id) }
@@ -1432,6 +1464,7 @@ indexController.ViewSingleState = async (req, res) => {
 
 indexController.editState = async (req,res) => {
   try {
+    const db = await connectToDatabase();
     const collection = "state"
     const {id} = req.params;
     await db.collection(collection).updateOne(
@@ -1457,6 +1490,7 @@ indexController.editState = async (req,res) => {
 
 indexController.ViewSingleCity = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     // console.log("working")
     const { id } = req.params;
     // console.log(id);
@@ -1474,6 +1508,7 @@ indexController.ViewSingleCity = async (req, res) => {
 
 indexController.editCity = async (req,res) => {
   try {
+    const db = await connectToDatabase();
     const collection = "city"
     const {id} = req.params;
     await db.collection(collection).updateOne(
@@ -1535,6 +1570,7 @@ indexController.getFeedback = async (req, res) => {
 
 indexController.getParticularFeedback = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "feedback";
     const filter = {
       partnerId : new ObjectId(req.params.pid)
@@ -1577,10 +1613,8 @@ indexController.getParticularFeedback = async (req, res) => {
 indexController.contactInfo = async (req, res) => {
   
   try {
+    const db = await connectToDatabase();
     const collections = "contact";
-
-    console.log(req.body);
-
     let result = await db.collection(collections).insertOne(req.body);
     //   console.log(result)
     res.json({ error: false, message: "We appreciate your interest. We'll review your inquiry and contact you soon." });
