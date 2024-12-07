@@ -157,44 +157,44 @@ export default function publicHome() {
                   </h2>
                   <ul>
                     <li>
-                      <a href="index.html">
+                      <Link to="/">
                         <img
                           src="assets/images/banner/happy-user-img-1.png"
                           alt="images"
                         />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="index.html">
+                      <Link to="/">
                         <img
                           src="assets/images/banner/happy-user-img-2.png"
                           alt="images"
                         />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="index.html">
+                      <Link to="/">
                         <img
                           src="assets/images/banner/happy-user-img-3.png"
                           alt="images"
                         />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="index.html">
+                      <Link to="/">
                         <img
                           src="assets/images/banner/happy-user-img-4.png"
                           alt="images"
                         />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="index.html">
+                      <Link to="/">
                         <img
                           src="assets/images/banner/happy-user-img-5.png"
                           alt="images"
                         />
-                      </a>
+                      </Link>
                     </li>
                     {/* <li>
                       <a href="index.html">
