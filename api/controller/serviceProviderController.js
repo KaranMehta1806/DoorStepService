@@ -1,9 +1,21 @@
-const db = require("../config/connection");
+const connectToDatabase = require("../config/connection");
+
 const { ObjectId } = require("mongodb");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "12345@abcd12";
 const { generateOTP, sendOTPEmail } = require('../utils/otpUtils');
 const cloudinary = require('../utils/CloudConfig');
+
+let db;
+
+(async () => {
+    try {
+        db = await connectToDatabase(); // Initialize db only once
+        console.log("Database connected successfully.");
+    } catch (error) {
+        console.error("Database connection failed:", error.message);
+    }
+})();
 
 
 

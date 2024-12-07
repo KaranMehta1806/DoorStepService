@@ -1,29 +1,26 @@
 const { MongoClient } = require("mongodb");
 require('dotenv').config();
 
-const dbURI = process.env.ATLASDB_URL; // Ensure this is correctly set in your .env file
+const dbURI = process.env.ATLASDB_URL;
 const client = new MongoClient(dbURI);
 
 let db;
 
-// Connect to MongoDB and initialize the database instance
 async function connectToDatabase() {
+    if (db) return db; // If already connected, return the existing db instance.
+
     try {
-        if (!db) { // Check if the database instance is already initialized
-            await client.connect();
-            console.log("Connected to MongoDB");
-            db = client.db("HomeAssist"); // Set the database instance
-        }
+        await client.connect();
+        console.log("Connected to MongoDB");
+        db = client.db("HomeAssist");
+        return db; // Return the db instance after successful connection.
     } catch (err) {
         console.error("Error connecting to MongoDB:", err);
-        throw err; // Exit with error if the connection fails
+        throw new Error("Database connection failed"); // Throw error if connection fails
     }
 }
 
-// Initialize connection immediately
-connectToDatabase();
-
-module.exports = db; // Export the database instance
+module.exports = connectToDatabase;
 
 
 
