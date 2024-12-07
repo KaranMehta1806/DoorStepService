@@ -204,7 +204,7 @@ const [feedback, setFeedback] = useState([]);
     <div className="custom-card-body provider-header">
       <div className="provider-info">
         <img
-          src={data.photo ? `${Server_URL2}${data.photo}` : '/photo1.png'}
+          src={data.photo ? data.photo : '/photo1.png'}
           alt="Provider"
           className="provider-photo"
         />

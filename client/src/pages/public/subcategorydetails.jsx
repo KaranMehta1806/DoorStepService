@@ -82,7 +82,7 @@ export default function providerDetails(){
                     <div className="col-lg-8">
                         <div className="single-services-details-content">
                             <div className="details-img" style={{ height: '30rem', overflow: 'hidden' }}>
-                                <img src={data.photo ? (Server_URL2 + data.photo) : '/photo1.png'} alt="images"
+                                <img src={data.photo ? data.photo : '/photo1.png'} alt="images"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}                                
                                 />
                             </div>
