@@ -7,16 +7,16 @@ const JWT_SECRET = "12345@abcd12";
 const { generateOTP, sendOTPEmail } = require('../utils/otpUtils');
 const cloudinary = require('../utils/CloudConfig');
 
-let db;
+// let db;
 
-(async () => {
-    try {
-        db = await connectToDatabase(); // Initialize db only once
-        console.log("Database connected successfully.");
-    } catch (error) {
-        console.error("Database connection failed:", error.message);
-    }
-})();
+// (async () => {
+//     try {
+//         db = await connectToDatabase(); // Initialize db only once
+//         console.log("Database connected successfully.");
+//     } catch (error) {
+//         console.error("Database connection failed:", error.message);
+//     }
+// })();
 
 
 const indexController = {};
@@ -34,6 +34,7 @@ indexController.AdminRegistration = async (req, res) => {
       address:address,
       otp:""
     }
+    // const db = await connectToDatabase();
 
     const collections = "admin";
     let result = await db.collection(collections).insertOne(document);
@@ -340,6 +341,7 @@ indexController.readsubcat = async (req, res) => {
 
 indexController.providerGetCategory = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "category";
     let documents = await db.collection(collections).find().toArray();
     res.json({
@@ -1003,7 +1005,7 @@ indexController.SubCatProvider = async (req, res) => {
 
 indexController.AllProviders = async (req, res) => {
   try {
-    // const db = await connectToDatabase();
+    const db = await connectToDatabase();
     const collections = "ServiceProvider";
     let documents = await db.collection(collections).aggregate([
       {
@@ -1497,6 +1499,7 @@ indexController.editCity = async (req,res) => {
 
 indexController.getFeedback = async (req, res) => {
   try {
+    const db = await connectToDatabase();
     const collections = "feedback";
     let documents = await db.collection(collections).aggregate([
       {
