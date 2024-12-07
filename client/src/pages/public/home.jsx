@@ -237,7 +237,7 @@ export default function publicHome() {
         <div className="container">
           <div className="section-title">
             <span className="top-title">Our Features</span>
-            <h2>How Can We Help You</h2>
+            <h2>How Can we Help You</h2>
           </div>
           <div className="row justify-content-center">
             <div
