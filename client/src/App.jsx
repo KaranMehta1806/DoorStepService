@@ -7,7 +7,7 @@ import { BrowserRouter,HashRouter, Routes, Route } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './pages/commonpages/AuthContext.jsx'
 
-
+const Preloader = lazy(() => import("./Preloader.jsx"));
 const PublicLayout = lazy(() => import("./layout/PublicLayout.jsx"));
 const AdminLayout = lazy(() => import("./layout/AdminLayout.jsx"));
 const PublicHome = lazy(() => import("./pages/public/home.jsx"));
@@ -86,7 +86,7 @@ function App() {
 <AuthProvider>
 
 
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<div><Preloader/></div>}>
 
         <HashRouter>
 
