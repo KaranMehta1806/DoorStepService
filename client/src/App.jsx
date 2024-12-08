@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter,HashRouter, Routes, Route } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './pages/commonpages/AuthContext.jsx'
 
@@ -88,7 +88,7 @@ function App() {
 
       <Suspense fallback={<p>Loading...</p>}>
 
-        <BrowserRouter>
+        <HashRouter>
 
           <Routes>
 
@@ -176,7 +176,7 @@ function App() {
           
           </Routes>
 
-        </BrowserRouter>
+        </HashRouter>
 
       </Suspense>
       
