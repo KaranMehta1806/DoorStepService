@@ -117,7 +117,7 @@ export default function viewSubsubCategory() {
                     <div className="col-lg-4 col-sm-6 col-md-6" key={index}>
 <div className="single-blog-card  rounded p-4 shadow-sm" datacue="fadeIn" dataduration="1000">
     <div className="blog-img" style={{ height: '200px', overflow: 'hidden' }}>
-            <img src={x.photo? (`${Server_URL2}${x.photo}`) : '/photo1.png'} alt="subcategory"
+            <img src={x.photo? x.photo : '/photo1.png'} alt="subcategory"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
             />
     </div>
