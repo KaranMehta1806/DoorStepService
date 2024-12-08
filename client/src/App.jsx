@@ -76,6 +76,8 @@ const MyOrder = lazy(() => import("./pages/user/MyOrder.jsx"));
 const OrderDetails = lazy(() => import("./pages/user/OrderDetails.jsx"));
 const UserChangePassword = lazy(() => import("./pages/user/ChangePassword.jsx"));
 const ContactUs = lazy(() => import("./pages/public/contactus.jsx"));
+const ThankYouPage = lazy(() => import("./pages/user/ThankYouPage.jsx"));
+
 
 
 
@@ -171,6 +173,7 @@ function App() {
             <Route path="myorder" element={<MyOrder/>} />
             <Route path="myorder/details" element={<OrderDetails/>} />
             <Route path="changepass" element={<UserChangePassword/>} />
+            <Route path="thankyou" element={<ThankYouPage />} />
               
             </Route>
           

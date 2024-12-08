@@ -135,7 +135,7 @@ export default function providerInfo() {
         <div className="card shadow-sm border-0 h-100">
           <div className="card-body text-center">
             <img
-              src="/photo1.png"
+              src={value.photo ? value.photo : '/photo1.png'}
               alt="Provider"
               className="img-fluid rounded-circle mb-3"
               style={{ width: "100px", height: "100px", objectFit: "cover" }}
