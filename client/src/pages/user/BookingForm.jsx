@@ -192,7 +192,7 @@ const paymentHandler = async (response) => {
       reset();
       showSuccessToast(message);
       localStorage.removeItem("bookingData")
-      navigate("/")
+      navigate("/user/thankyou")
     }
   }
 };
