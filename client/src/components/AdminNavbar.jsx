@@ -413,16 +413,18 @@ export default function AdminNavbar() {
                   </li>
 
 
-
-
-
- 
-
-
-
-
-
-
+                  <div className="others-option-vg d-flex align-items-center">
+                    {/* <div className="option-item">
+                                <button type="button" className="search-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                                    <i className="flaticon-search"></i>
+                                </button>
+                            </div> */}
+                    <div className="option-item">
+                      <p className=" navbar-btn" onClick={logout}>
+                        <i className="bx bx-arrow-back me-3 "></i>Log-Out
+                      </p>
+                    </div>
+                  </div>
                   
                   
                  {/* <li className="nav-item ">
