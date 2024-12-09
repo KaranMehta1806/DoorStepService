@@ -443,12 +443,6 @@ export default function AdminNavbar() {
 
 
                 </ul>
-
-                <div className="others-option-vg d-flex align-items-center">
-                  
-
-                  
-                </div>
               </div>
             </nav>
           </div>
