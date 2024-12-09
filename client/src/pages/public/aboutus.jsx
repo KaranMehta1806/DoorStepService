@@ -257,7 +257,7 @@ export default function AboutUs() {
                     <div className="single-team-card" datacue="fadeIn" dataduration="1000">
                     <div className="team-img" style={{ height: '200px', overflow: 'hidden' }}>
                             
-                            <img src={x.photo ? (Server_URL2 + x.photo) : '/photo1.png'} alt="images"
+                            <img src={x.photo ? x.photo : '/photo1.png'} alt="images"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
                                 
