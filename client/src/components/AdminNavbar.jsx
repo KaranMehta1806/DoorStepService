@@ -421,7 +421,7 @@ export default function AdminNavbar() {
                             </div> */}
                     <div className="option-item">
                       <p className=" navbar-btn" onClick={logout}>
-                        <i className="bx bx-arrow-back me-3 "></i>Log-Out
+                        <i className="bx bx-arrow-back me-3 "></i>LogOut
                       </p>
                     </div>
                   </div>
