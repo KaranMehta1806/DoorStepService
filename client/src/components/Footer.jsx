@@ -269,9 +269,9 @@ export default function Footer() {
           <div className="single-copyright-content">
             <p>
               © Home-Assist is Proudly Owned by{" "}
-              <a href="https://hibootstrap.com/" target="_blank">
+              <Link to="/">
                 Karan
-              </a>
+              </Link>
             </p>
           </div>
         </div>
