@@ -99,7 +99,7 @@ export default function signup() {
                             </div> */}
                             <div className="col-lg-12 col-sm-12 col-md-12 mb-3">
                                 <div className="text-account">
-                                    <p><Link to="/provider/forgotpassword" >Forget Password?</Link></p>
+                                    <p><Link to="/provider/forgotpassword" >Forgot Password?</Link></p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
