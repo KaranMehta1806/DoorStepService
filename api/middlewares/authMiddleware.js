@@ -11,9 +11,6 @@ function adminAuthMiddleware(req, res, next) {
 
     
     const token = req.headers.authorization.split(" ")[1];
-    // if(!token){
-    //   return res.json({ error: true, message: "SignIn" });
-    // }
     const data = jwt.verify(token, JWT_SECRET);
     req.adminInfo = data;
     next();

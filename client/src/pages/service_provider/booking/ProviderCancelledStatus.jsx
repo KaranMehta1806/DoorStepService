@@ -51,73 +51,7 @@ export default function ProviderCancelledStatus(){
       },[])
     return(
         <>
-        {/* <div>
-        <table className="table table-dark">
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>SubCategory</th>
-                    <th>Total Price</th>
-                    <th>Date</th>
-                    <th>Provider Name</th>
-                    <th>Provider Email</th>
-                    <th>User Name</th>
-                    <th>User Email</th>
-                    <th>More-Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                {booking
-                .filter(value => value.status === "cancelled")
-                .map((value,index)=>{
-                    return(
-                    <tr key={index}>
-                        <td>
-                        {value.categoryName}
-                        </td>
-                        <td>
-                        {value.subCategoryName}
-                        </td>
-                        <td>
-                        {value.total}
-                        </td>
-                        <td>
-                        {value.date}
-                        </td>
-                        <td>
-                        {value.providerName}
-                        </td>
-                        <td>
-                        {value.providerEmail}
-                        </td>
-                        <td>
-                        {value.userName}
-                        </td>
-                        <td>
-                        {value.userEmail
-                        }
-                        </td>
-                        
-                        
-                        <td>
-                  {
-                    <button
-                      type="button"
-                      onClick={() => More_details(value)}
-                      className="btn btn-outline-secondary btn-sm me-5"
-                    >
-                      More Details
-                    </button>
-                  }
-                </td>
-                    </tr>
-                )
-                })}
-
-            </tbody>
-
-        </table>
-      </div> */}
+        
       <div className="custom-col-lg-12 custom-col-md-12 custom-card-container mb-4">
   <div className="custom-card shadow-sm">
     <div className="custom-card-body">

@@ -12,17 +12,7 @@ export default function ProviderCompletedDetails() {
   return (
     <div className="custom-container py-5">
       <div className="custom-row">
-        {/* Service Provider Details */}
-        {/* <div className="custom-col-lg-6 custom-col-md-12 custom-card-container mb-4">
-          <div className="custom-card service-card shadow-sm">
-            <div className="custom-card-body">
-              <h4 className="custom-card-title">Service Provider Information</h4>
-              <p><strong>Name:</strong> {BookingDetails.providerName}</p>
-              <p><strong>Email:</strong> {BookingDetails.providerEmail}</p>
-              <p><strong>Mobile:</strong> {BookingDetails.providerMobile}</p>
-            </div>
-          </div>
-        </div> */}
+        
 
         {/* Customer Details */}
         <div className="custom-col-lg-6 custom-col-md-12 custom-card-container mb-4">
@@ -77,15 +67,4 @@ export default function ProviderCompletedDetails() {
 
 
 
-{/* <tr>
-<td>abc</td>
-<td>abc</td>
-</tr>
-<tr>
-<td>abc</td>
-<td>abc</td>
-</tr>
-<tr>
-<td>abc</td>
-<td>abc</td>
-</tr> */}
+

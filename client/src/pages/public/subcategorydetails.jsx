@@ -112,50 +112,19 @@ export default function providerDetails(){
                                     </div>
                                 </div>
                             </div>
-                            {/* <p>Lorem ipsum dolor sit amet consectetur adipiscing elit morbi mattis urna bibendum ornare malesuada fusce semper auctor nibh vitae feugiat nunc ut orci congue lobortis mauris eget venenatis metus in hac habitasse plat
-                            dictumst donec eleifend feugiat nisi quis pulvinar nam nec metus vel lorem feugiat.</p> */}
-                            {/* <h4>We Give The Best Services</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit morbi mattis urna bibendum ornare malesuada fusce semper auctor nibh vitae feugiat nunc ut orci congue lobortis mauris eget venenatis metus in hac habitasse plat
-                            dictumst donec eleifend feugiat nisi quis pulvinar nam nec metus vel lorem feugiat pretium in hac habitasse 
-                            platea dictumst aenean feugiat velit a vehicula pharetra.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit morbi mattis urna bibendum ornare malesuada fusce semper auctor nibh vitae feugiat nunc ut orci congue lobortis mauris eget venenatis metus.</p> */}
-                            {/* <div className="row">
-                                <div className="col-lg-6 col-sm-6 col-md-6">
-                                    <div className="services-details-img-two">
-                                        <img src="assets/images/services/services-details-img-2.jpg" alt="images"/>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 col-sm-6 col-md-6">
-                                    <div className="services-details-img-two">
-                                        <img src="assets/images/services/services-details-img-3.jpg" alt="images"/>
-                                    </div>
-                                </div>
-                            </div> */}
-                            {/* <h4>Brief Description Of Sevices</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit morbi mattis urna bibendum ornare malesuada fusce semper auctor nibh vitae feugiat nunc ut orci congue lobortis mauris eget venenatis metus in hac habitasse plat
-                            dictumst donec eleifend feugiat nisi quis pulvinar nam nec metus vel lorem feugiat.</p> */}
+                           
                         </div>
                     </div>
                     <div className="col-lg-4">
                         <div className="single-services-detalis-right">
-                            {/* <div className="services-details-search">
-                                <h2>Search</h2>
-                                <form className="search-form">
-                                    <input type="text" className="form-control" placeholder="Search" name="search"/>
-                                    <button type="submit" className="default-btn btn-style-three">
-                                        <i className='bx bx-search'></i>
-                                    </button>
-                                </form>
-                            </div> */}
+                            
                             <div className="services-house-cleaning-card">
                                 <h2>Service Provider</h2>
                                 <ul>
                                 {provider.map((x, index) => (
                                     
                                     <li key={index}>
-                                    {/* <a href="services-details.html">
-                                        {x.fullName} <i className='bx bx-arrow-back'></i>
-                                    </a> */}
+                                    
                                     <p
                           style={{ padding: "15px", cursor: "pointer" }}
                           onClick={() => bookProvider(x)}

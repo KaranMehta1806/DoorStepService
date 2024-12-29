@@ -112,61 +112,6 @@ function BookingPage() {
   };
 
   return (
-    // <Container fluid className="container-background d-flex justify-content-center align-items-center min-vh-100">
-    //   <Row className="w-100 d-flex justify-content-center align-items-center">
-    //     <Col md={8} lg={6} className="d-flex justify-content-center">
-    //       <div className="form-container">
-    //         <h3 className="text-center mb-4 header-text">Add Booking Details</h3>
-    //         {user.map((value, index) => (
-    //           <form onSubmit={handleSubmit(onSubmit)} key={index}>
-    //             <div className="mb-3">
-    //               <label>Select a date:</label>
-    //               <div className="input-group">
-    //                 <span className="input-group-text icon-container"><FaCalendarAlt /></span>
-    //                 <input
-    //                   type="date"
-    //                   min={getMinDate()}
-    //                   className="form-control date-input"
-    //                   {...register("date", { required: true })}
-    //                   onChange={(e) => {
-    //                     setSelectedDate(e.target.value); // Update selected date
-    //                     setValue('date', e.target.value);
-    //                   }}
-    //                 />
-    //               </div>
-    //               {errors.date && <p className="text-danger">This field is required</p>}
-    //             </div>
-
-    //             <div className="mb-3">
-    //               <label>Select Time Slot:</label>
-    //               <div className="input-group">
-    //                 <span className="input-group-text icon-container"><FaClock /></span>
-    //                 <select {...register("timeslot", { required: true })} className="form-control">
-    //                   <option value="">Select a time slot</option>
-    //                   {generateTimeSlots().map(({ start, end }) => (
-    //                     <option
-    //                       key={${start}-${end}}
-    //                       value={${start}-${end}}
-    //                       className={isSlotBooked(start, end) ? 'booked' : 'available'}
-    //                       disabled={isSlotBooked(start, end)}
-    //                     >
-    //                       {start} - {end}
-    //                     </option>
-    //                   ))}
-    //                 </select>
-    //               </div>
-    //               {errors.timeslot && <p className="text-danger">This field is required</p>}
-    //             </div>
-
-    //             {/* Remaining fields here */}
-
-    //             <button className="btn w-100 button">Register</button>
-    //           </form>
-    //         ))}
-    //       </div>
-    //     </Col>
-    //   </Row>
-    // </Container>
 
     <Container fluid className="container-background d-flex justify-content-center align-items-center min-vh-100">
       <Row className="w-100 d-flex justify-content-center align-items-center">

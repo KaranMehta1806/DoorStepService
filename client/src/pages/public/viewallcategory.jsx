@@ -24,7 +24,6 @@ export default function ViewAllCategory(){
           alert(message);
         } else {
           const { result } = response.data;
-          // console.log(result)
           setCategory(result);
         }
       }
@@ -51,32 +50,7 @@ export default function ViewAllCategory(){
                 
                 <div className="row " >
                 {category.map((x, index) => (
-              //     <div className="col-lg-4 col-md-6" datacue="fadeIn" dataduration="1000">
-              //     <div className="single-portfolio-item">
-              //         <div className="portfolio-img">
-              //             <Link>
-              //                 <img src={x.photo ? (Server_URL2 + x.photo) : '/photo1.png'} alt="images"/>
-              //             </Link>
-              //         </div>
-              //         <div className="portfolio-content">
-              //             <p onClick={() => showSubcategory(x._id)}><Link>{x.categoryName}</Link></p>
-              //             <a href="portfolio-details.html">
-              //                 <h2>{x.description}</h2>
-              //             </a>
-              //             {/* <a href="portfolio-details.html" class="learn-more">Learn More <i class="flaticon-next"></i></a> */}
-              //         </div>
-              //     </div>
-              // </div>
-                    
-//                     <div className="col-lg-4 col-sm-6 col-md-6" key={index}>
-// <div className="single-blog-card" datacue="fadeIn" dataduration="1000">
-//     <div className="blog-img">
-//             <img src={x.photo ? (Server_URL2 + x.photo) : '/photo1.png'} alt="images" />
-//     </div>
-//         <h2 onClick={() => showSubcategory(x._id)} className="mt-4 text-center"><Link>{x.categoryName}</Link></h2>
-//         <p className="mt-3 text-center">{x.description}</p>
-// </div>
-// </div>
+             
 
 <div className="col-lg-4 col-sm-6 col-md-6" key={index}>
 <div className="single-blog-card  rounded p-4 shadow-sm" datacue="fadeIn" dataduration="1000">

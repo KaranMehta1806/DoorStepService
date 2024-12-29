@@ -115,33 +115,7 @@ export default function userLogin() {
                                 <button type="submit" className="default-btn btn-style-fore">Login</button>
                             </div>
                         </div>
-                        {/* <div className="border-or">
-                            <span>Or Login With</span>
-                        </div>
-                        <div className="my-account-list">
-                            <ul>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank"> 
-                                        <i className='bx bxl-facebook'></i>
-                                    </a>
-                                </li>   
-                                <li>
-                                    <a href="https://twitter.com/" target="_blank">
-                                        <i className='bx bxl-twitter' ></i>
-                                    </a>
-                                </li>    
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i className='bx bxl-linkedin' ></i>
-                                    </a>  
-                                </li> 
-                                <li>
-                                    <a href="https://www.google.com/" target="_blank">
-                                        <i className='bx bxl-google' ></i>
-                                    </a>  
-                                </li> 
-                            </ul>
-                        </div> */}
+                       
                         <p>Don’t Have an Account? <Link to="/user/registeruser" >Create One</Link></p>
                     </form>
                 </div>
