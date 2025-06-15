@@ -88,14 +88,14 @@
 
 /* our team rating */
 
-.rating {
+/* .rating {
     margin-top: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     margin-bottom: 10px;
-}
+} */
 
 .filled-star {
     color: #ffc107; /* Gold color for filled stars */
@@ -105,11 +105,11 @@
     color: #ccc; /* Light color for empty stars */
 }
 
-.rating-text {
+/* .rating-text {
     font-size: 14px;
     color: #555;
     margin-left: 5px;
-}
+} */
 
 
 /* Review Card */
