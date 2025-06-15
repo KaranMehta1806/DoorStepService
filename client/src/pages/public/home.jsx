@@ -546,68 +546,50 @@ export default function publicHome() {
       </div>
       {/* <!-- End Our Team Area --> */}
 
-      <div className="services-area pt-100 pb-100">
-        <div className="container">
-          <div className="section-title">
-            <h2>Our Top Reviews</h2>
-          </div>
-          <div className="row ">
-            {feedback.slice(0, 3).map((x, index) => (
-              <div className="review-card-container" key={index}>
-                <div className="review-card shadow-sm">
-                  <div className="review-card-header d-flex align-items-center mb-3">
-                    <img
-                      src="/photo1.png"
-                      alt="images"
-                      className="review-user-photo"
-                    />
-                    <div className="review-user-info ms-3">
-                      <h5 className="user-name">{x.userInfo}</h5>
-                      <div className="custom-review-rating">
-                        {Array.from({ length: 5 }, (_, i) => {
-                          const rating = Math.max(x.rating || 1, 1);
-                          if (i < Math.floor(rating)) {
-                            return (
-                              <i
-                                key={i}
-                                className="fas fa-star custom-filled-star"
-                              ></i>
-                            );
-                          } else if (i < rating) {
-                            return (
-                              <i
-                                key={i}
-                                className="fas fa-star-half-alt custom-half-filled-star"
-                              ></i>
-                            );
-                          } else {
-                            return (
-                              <i
-                                key={i}
-                                className="far fa-star custom-empty-star"
-                              ></i>
-                            );
-                          }
-                        })}
-                        <span className="custom-rating-text">
-                          (
-                          {Number.isInteger(x.rating)
-                            ? x.rating
-                            : x.rating.toFixed(1)}
-                          )
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="review-comment mt-2">
-                    <p className="comment-text">{x.comments}</p>
-                  </div>
+      <div className="custom-review-section pt-100 pb-100">
+  <div className="container">
+    <div className="custom-review-title">
+      <h2>Our Top Reviews</h2>
+    </div>
+    <div className="row">
+      {feedback.slice(0, 3).map((x, index) => (
+        <div className="custom-review-col col-lg-4 col-md-6 col-sm-12" key={index}>
+          <div className="custom-review-card">
+            <div className="custom-review-header">
+              <img
+                src="/photo1.png"
+                alt="user"
+                className="custom-review-photo"
+              />
+              <div className="custom-review-user">
+                <h5 className="custom-review-name">{x.userInfo}</h5>
+                <div className="custom-review-rating">
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const rating = Math.max(x.rating || 1, 1);
+                    if (i < Math.floor(rating)) {
+                      return <i key={i} className="fas fa-star custom-filled-star"></i>;
+                    } else if (i < rating) {
+                      return <i key={i} className="fas fa-star-half-alt custom-half-filled-star"></i>;
+                    } else {
+                      return <i key={i} className="far fa-star custom-empty-star"></i>;
+                    }
+                  })}
+                  <span className="custom-rating-text">
+                    ({Number.isInteger(x.rating) ? x.rating : x.rating.toFixed(1)})
+                  </span>
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="custom-review-comment">
+              <p className="custom-comment-text">{x.comments}</p>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
     </>
   );
 }
