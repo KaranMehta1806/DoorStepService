@@ -90,7 +90,7 @@ function App() {
 
       <Suspense fallback={<div><Preloader/></div>}>
 
-        <HashRouter>
+        <BrowserRouter>
 
           <Routes>
 
@@ -179,7 +179,7 @@ function App() {
           
           </Routes>
 
-        </HashRouter>
+        </BrowserRouter>
 
       </Suspense>
       
