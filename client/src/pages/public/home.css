@@ -1,4 +1,29 @@
 .review-card {
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.comment-text {
+  line-height: 1.6;
+}
+
+.rating {
+  font-size: 14px;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+
+
+/* .review-card {
     display: flex;
     align-items: flex-start;
     padding: 15px;
@@ -8,7 +33,7 @@
     max-width: 500px;
     margin: 20px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .review-image img {
     width: 50px;

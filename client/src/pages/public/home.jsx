@@ -553,37 +553,68 @@ export default function publicHome() {
       {/* <!-- End Our Team Area --> */}
 
       <div className="services-area pt-100 pb-100">
-        <div className="container">
-          <div className="section-title">
-            <h2>Our Top Reviews</h2>
-          </div>
-          <div className="row ">
-            {feedback.slice(0, 3).map((x, index) => (
-              <div className="review-card-container" key={index}>
-                <div className="review-card shadow-sm">
-                  <div className="review-card-header d-flex align-items-center mb-3">
-                    <img
-                      src="/photo1.png"
-                      alt="images"
-                      className="review-user-photo"
-                    />
-                    <div className="review-user-info ms-3">
-                      <h5 className="user-name">{x.userInfo}</h5>
-                      <div
-                        className="user-rating starability-result"
-                        data-rating="1"
-                      ></div>
-                    </div>
-                  </div>
-                  <div className="review-comment mt-2">
-                    <p className="comment-text">{x.comments}</p>
-                  </div>
+  <div className="container">
+    <div className="section-title">
+      <h2>Our Top Reviews</h2>
+    </div>
+    <div className="row">
+      {feedback.slice(0, 3).map((x, index) => (
+        <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
+          <div className="review-card shadow-sm p-4 mb-4" style={{ borderRadius: '10px', height: '100%' }}>
+            <div className="review-card-header d-flex align-items-center mb-3">
+              <img
+                src={x.userPhoto || "/photo1.png"}
+                alt="user"
+                className="review-user-photo"
+                style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
+              />
+              <div className="review-user-info ms-3">
+                <h5 className="user-name mb-1">{x.userInfo || 'Anonymous'}</h5>
+                <div className="rating">
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const rating = x.rating;
+                    if (i < Math.floor(rating)) {
+                      return (
+                        <i key={i} className="fas fa-star filled-star" style={{ color: '#ffc107' }}></i>
+                      );
+                    } else if (i < rating) {
+                      return (
+                        <i
+                          key={i}
+                          className="fas fa-star-half-alt half-filled-star"
+                          style={{ color: '#ffc107' }}
+                        ></i>
+                      );
+                    } else {
+                      return (
+                        <i key={i} className="far fa-star empty-star" style={{ color: '#ffc107' }}></i>
+                      );
+                    }
+                  })}
+                  <span className="rating-text ms-1">
+                    ({Number.isInteger(x.rating) ? x.rating : x.rating.toFixed(1)})
+                  </span>
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="review-comment mt-3">
+              <p className="comment-text" style={{ color: '#555' }}>
+                {x.comments || 'No comment provided'}
+              </p>
+            </div>
+            {x.serviceInfo && (
+              <div className="review-service mt-2">
+                <small className="text-muted">
+                  Service: {x.serviceInfo}
+                </small>
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
     </>
   );
 }
