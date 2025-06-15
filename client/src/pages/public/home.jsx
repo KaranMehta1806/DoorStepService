@@ -95,9 +95,11 @@ export default function publicHome() {
   fetchAll();
 }, []);
 
+   if (isLoading) return <Preloader />;  
+
+
   return (
     <>
-      {isLoading && <Preloader />}
       <div className="banner-area">
         <div className="container-fluid">
           <div className="row align-items-center">
