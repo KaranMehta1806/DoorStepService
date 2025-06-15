@@ -563,10 +563,40 @@ export default function publicHome() {
                     />
                     <div className="review-user-info ms-3">
                       <h5 className="user-name">{x.userInfo}</h5>
-                      <div
-                        className="user-rating starability-result"
-                        data-rating="1"
-                      ></div>
+                      <div className="custom-review-rating">
+                        {Array.from({ length: 5 }, (_, i) => {
+                          const rating = Math.max(x.rating || 1, 1);
+                          if (i < Math.floor(rating)) {
+                            return (
+                              <i
+                                key={i}
+                                className="fas fa-star custom-filled-star"
+                              ></i>
+                            );
+                          } else if (i < rating) {
+                            return (
+                              <i
+                                key={i}
+                                className="fas fa-star-half-alt custom-half-filled-star"
+                              ></i>
+                            );
+                          } else {
+                            return (
+                              <i
+                                key={i}
+                                className="far fa-star custom-empty-star"
+                              ></i>
+                            );
+                          }
+                        })}
+                        <span className="custom-rating-text">
+                          (
+                          {Number.isInteger(x.rating)
+                            ? x.rating
+                            : x.rating.toFixed(1)}
+                          )
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div className="review-comment mt-2">

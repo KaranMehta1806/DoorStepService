@@ -86,8 +86,34 @@
     margin-left: 5px;
 }
 
+.custom-review-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
-/* Review Card */
+.custom-filled-star {
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.custom-empty-star {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.custom-half-filled-star {
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.custom-rating-text {
+  font-size: 0.85rem;
+  margin-left: 4px;
+  color: #666;
+}
+
+
 
 
 
