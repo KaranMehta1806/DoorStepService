@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/ServiceProviderNavbar";
-import Footer from "../components/Footer";
+import ProviderFooter from "../components/ProviderFooter";
 import { utilityFunctions } from "../utils/module";
 import { ToastContainer } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
@@ -26,7 +26,7 @@ export default function providerLayout() {
         <>
           <Navbar />
           <Outlet />
-          <Footer />
+          <ProviderFooter />
         </>
       ) : null}
       <ToastContainer

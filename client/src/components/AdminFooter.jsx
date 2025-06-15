@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { showErrorToast } from "../utils/toasthelper";
 import axios from "axios";
 
-export default function Footer() {
-  const [category, setCategory] = useState([]);
+export default function AdminFooter() {
 
   const handleLinkClick = () => {
     window.scrollTo({
@@ -14,32 +13,12 @@ export default function Footer() {
     });
   };
 
-  async function ReadCategory() {
-    try {
-      const url = Server_URL + "provider/managecategory";
-      const response = await axios.get(url);
-      // console.log(response.data);
+  
 
-      const { error, message } = response.data;
-      if (error) {
-        showErrorToast(message);
-      } else {
-        const { result } = response.data;
-        // console.log(result)
-        setCategory(result);
-      }
-    } catch (error) {
-      showErrorToast(error.message);
-    }
-  }
-
-  useEffect(() => {
-    ReadCategory();
-  }, []);
+ 
   return (
     <>
-     
-
+      
       <div className="footer-area pt-100 pb-100">
         <div className="container">
           <div className="row">
@@ -49,7 +28,7 @@ export default function Footer() {
                 datacue="fadeIn"
                 dataduration="1000"
               >
-                <Link to="#">
+                <Link to="/admin/dashboard" onClick={handleLinkClick}>
                   <img
                     src="/HomeAssist8.png"
                     alt="images"
@@ -103,18 +82,28 @@ export default function Footer() {
                     datacue="fadeIn"
                     dataduration="1300"
                   >
-                    <h2>Our Services</h2>
+                    <h2>Add Records</h2>
                     <ul className="list-widget">
-                      {category.slice(0, 5).map((x, index) => (
-                        <li key={index}>
-                          <Link to="/allcategory" onClick={handleLinkClick}>
-                            <i className="bx bx-arrow-back"></i>
-                            {x.categoryName}
-                          </Link>
-                        </li>
-                      ))}
-
-                      
+                      <li>
+                        <Link to="/admin/create-category" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Create Category
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/admin/create-subcategory" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Create SubCategory
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/admin/add-state" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Add State
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/admin/add-city" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Add City
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -124,29 +113,34 @@ export default function Footer() {
                     datacue="fadeIn"
                     dataduration="1800"
                   >
-                    <h2>Explore</h2>
+                    <h2>View Records</h2>
                     <ul className="list-widget">
                       <li>
-                        <Link to="/aboutus" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>About Us
+                        <Link to="/admin/view-category" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>View Categories
                         </Link>
                       </li>
                       <li>
-                        <Link to="/contactus" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>Contact Us
+                        <Link to="/admin/view-subcategory" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>View SubCategories
                         </Link>
                       </li>
                       <li>
-                        <Link to="/ourteam" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>Our Team
+                        <Link to="/admin/confirmed" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Confirmed Bookings
                         </Link>
                       </li>
                       <li>
-                        <Link to="/allcategory" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>Our Services
+                        <Link to="/admin/completed" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Completed Bookings
                         </Link>
                       </li>
-                  
+                      <li>
+                        <Link to="/admin/cancelled" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Cancelled Bookings
+                        </Link>
+                      </li>
+                     
                     </ul>
                   </div>
                 </div>
@@ -161,9 +155,11 @@ export default function Footer() {
                       <div className="notification-icon">
                         <i className="flaticon-phone-call"></i>
                       </div>
-                      <Link to="/">+1 (514) 312-5678</Link>
+                      
+                      <Link to="/admin/dashboard" onClick={handleLinkClick}>+1 (514) 312-5678</Link>
                       <span>
-                      <Link to="/">+1 (514) 312-5678</Link>
+                       
+                      <Link to="/admin/dashboard" onClick={handleLinkClick}>+1 (514) 312-5678</Link>
 
                       </span>
                     </div>
@@ -171,24 +167,24 @@ export default function Footer() {
                       <div className="notification-icon">
                         <i className="flaticon-email"></i>
                       </div>
-                     
-                      <Link to="/" >
+                      
+                      <Link to="/admin/dashboard" onClick={handleLinkClick}>
                         <span
                           className="__cf_email__"
                           data-cfemail="167e737a7a7956747f6e633875797b"
                         >
-                     
+                        
                           homeassist@gmail.com
                         </span>
                       </Link>
                       <span>
-                       
-                        <Link to="/">
+                        
+                        <Link to="/admin/dashboard" onClick={handleLinkClick}>
                           <span
                             className="__cf_email__"
                             data-cfemail="395b50414c4a4c4949564b4d795e54585055175a5654"
                           >
-                         
+                          
                             homeassisthelp@gmail.com
                           </span>
                         </Link>
@@ -220,7 +216,7 @@ export default function Footer() {
           <div className="single-copyright-content">
             <p>
               © Home-Assist is Proudly Owned by{" "}
-              <Link to="/">
+              <Link to="/admin/dashboard" onClick={handleLinkClick}>
                 Karan
               </Link>
             </p>

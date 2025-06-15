@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { showErrorToast } from "../utils/toasthelper";
 import axios from "axios";
 
-export default function Footer() {
-  const [category, setCategory] = useState([]);
+export default function ProviderFooter() {
 
   const handleLinkClick = () => {
     window.scrollTo({
@@ -14,28 +13,7 @@ export default function Footer() {
     });
   };
 
-  async function ReadCategory() {
-    try {
-      const url = Server_URL + "provider/managecategory";
-      const response = await axios.get(url);
-      // console.log(response.data);
-
-      const { error, message } = response.data;
-      if (error) {
-        showErrorToast(message);
-      } else {
-        const { result } = response.data;
-        // console.log(result)
-        setCategory(result);
-      }
-    } catch (error) {
-      showErrorToast(error.message);
-    }
-  }
-
-  useEffect(() => {
-    ReadCategory();
-  }, []);
+ 
   return (
     <>
      
@@ -49,7 +27,7 @@ export default function Footer() {
                 datacue="fadeIn"
                 dataduration="1000"
               >
-                <Link to="#">
+                <Link to="/providerpages" onClick={handleLinkClick}>
                   <img
                     src="/HomeAssist8.png"
                     alt="images"
@@ -97,28 +75,7 @@ export default function Footer() {
             </div>
             <div className="col-lg-8">
               <div className="row">
-                <div className="col-lg-4 col-sm-6 col-md-4">
-                  <div
-                    className="footer-widget footer-left-widget"
-                    datacue="fadeIn"
-                    dataduration="1300"
-                  >
-                    <h2>Our Services</h2>
-                    <ul className="list-widget">
-                      {category.slice(0, 5).map((x, index) => (
-                        <li key={index}>
-                          <Link to="/allcategory" onClick={handleLinkClick}>
-                            <i className="bx bx-arrow-back"></i>
-                            {x.categoryName}
-                          </Link>
-                        </li>
-                      ))}
-
-                      
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-lg-4 col-sm-6 col-md-4">
+                <div className="col-lg-6 col-sm-6 col-md-6">
                   <div
                     className="footer-widget footer-left-two-widget"
                     datacue="fadeIn"
@@ -127,30 +84,30 @@ export default function Footer() {
                     <h2>Explore</h2>
                     <ul className="list-widget">
                       <li>
-                        <Link to="/aboutus" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>About Us
+                        <Link to="/providerpages" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>DashBoard
                         </Link>
                       </li>
                       <li>
-                        <Link to="/contactus" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>Contact Us
+                        <Link to="/providerpages/confirmed" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Confirmed Bookings
                         </Link>
                       </li>
                       <li>
-                        <Link to="/ourteam" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>Our Team
+                        <Link to="/providerpages/completed" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Completed Bookings
                         </Link>
                       </li>
                       <li>
-                        <Link to="/allcategory" onClick={handleLinkClick}>
-                          <i className="bx bx-arrow-back"></i>Our Services
+                        <Link to="/providerpages/cancelled" onClick={handleLinkClick}>
+                          <i className="bx bx-arrow-back"></i>Cancelled Bookings
                         </Link>
                       </li>
-                  
+                     
                     </ul>
                   </div>
                 </div>
-                <div className="col-lg-4 col-sm-6 col-md-4">
+                <div className="col-lg-6 col-sm-6 col-md-6">
                   <div
                     className="footer-widget footer-left-three-widget"
                     datacue="fadeIn"
@@ -161,9 +118,11 @@ export default function Footer() {
                       <div className="notification-icon">
                         <i className="flaticon-phone-call"></i>
                       </div>
-                      <Link to="/">+1 (514) 312-5678</Link>
+                     
+                      <Link to="/providerpages" onClick={handleLinkClick}>+1 (514) 312-5678</Link>
                       <span>
-                      <Link to="/">+1 (514) 312-5678</Link>
+                       
+                      <Link to="/providerpages" onClick={handleLinkClick}>+1 (514) 312-5678</Link>
 
                       </span>
                     </div>
@@ -172,23 +131,21 @@ export default function Footer() {
                         <i className="flaticon-email"></i>
                       </div>
                      
-                      <Link to="/" >
+                      <Link to="/providerpages" onClick={handleLinkClick}>
                         <span
                           className="__cf_email__"
                           data-cfemail="167e737a7a7956747f6e633875797b"
                         >
-                     
                           homeassist@gmail.com
                         </span>
                       </Link>
                       <span>
-                       
-                        <Link to="/">
+                        
+                        <Link to="/providerpages" onClick={handleLinkClick}>
                           <span
                             className="__cf_email__"
                             data-cfemail="395b50414c4a4c4949564b4d795e54585055175a5654"
                           >
-                         
                             homeassisthelp@gmail.com
                           </span>
                         </Link>
@@ -220,7 +177,7 @@ export default function Footer() {
           <div className="single-copyright-content">
             <p>
               © Home-Assist is Proudly Owned by{" "}
-              <Link to="/">
+              <Link to="/providerpages" onClick={handleLinkClick}>
                 Karan
               </Link>
             </p>
