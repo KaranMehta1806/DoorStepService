@@ -5,33 +5,29 @@ import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import { showErrorToast } from "../../utils/toasthelper";
 import "../../assets/css/rating.css";
-// import "../../assets/css/"
+import Preloader from "../../Preloader";
 
 export default function publicHome() {
   console.log(Server_URL);
-
-
 
   const [category, setCategory] = useState([]);
   const [providers, setProviders] = useState([]);
   const [feedback, setFeedback] = useState([]);
   const [showAll, setShowAll] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   const navigate = useNavigate();
 
   async function ReadCategory() {
-
-
     try {
-      const url =Server_URL + 'provider/managecategory';
+      const url = Server_URL + "provider/managecategory";
       const response = await axios.get(url);
-      // console.log(response.data);
 
       const { error, message } = response.data;
       if (error) {
         showErrorToast(message);
       } else {
         const { result } = response.data;
-        // console.log(result)
         setCategory(result);
       }
     } catch (error) {
@@ -40,16 +36,14 @@ export default function publicHome() {
   }
   async function ReadProviders() {
     try {
-      const url =Server_URL +  'providerinfo';
+      const url = Server_URL + "providerinfo";
       const response = await axios.get(url);
-      // console.log(response.data);
 
       const { error, message } = response.data;
       if (error) {
         showErrorToast(message);
       } else {
         const { result } = response.data;
-        // console.log(result);
         setProviders(result);
       }
     } catch (error) {
@@ -68,16 +62,13 @@ export default function publicHome() {
         showErrorToast(message);
       } else {
         const { result } = response.data;
-        console.log(result)
+        console.log(result);
         setFeedback(result);
       }
     } catch (error) {
       showErrorToast(error.message);
     }
   }
-
-
-
 
   async function showSubcategory(id) {
     navigate("/allsubcategory", { state: { id } });
@@ -87,13 +78,26 @@ export default function publicHome() {
   }
 
   useEffect(() => {
-    ReadCategory(),
-     ReadProviders(),
-    ReadFeedback();
-  }, []);
+  async function fetchAll() {
+    try {
+      setIsLoading(true);
+      await Promise.all([
+        ReadCategory(),
+        ReadProviders(),
+        ReadFeedback()
+      ]);
+    } catch (error) {
+      console.error("Error loading data:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  fetchAll();
+}, []);
 
   return (
     <>
+      {isLoading && <Preloader />}
       <div className="banner-area">
         <div className="container-fluid">
           <div className="row align-items-center">
@@ -113,9 +117,7 @@ export default function publicHome() {
                   orem ipsum dolor sit amet consectetur adipi scing adipi scing
                   elit.
                 </p>
-                {/* <a href="pricing.html" className="default-btn btn-style-one">
-                  Our Best Offers
-                </a> */}
+                
               </div>
             </div>
             <div className="col-lg-6">
@@ -131,7 +133,6 @@ export default function publicHome() {
                 </div>
                 <div
                   className="banner-img-shape-1"
-                  //   datacue="zoomIn"
                   datacue="zoomIn"
                   //   dataduration="1000"
                   dataduration="1000"
@@ -196,11 +197,7 @@ export default function publicHome() {
                         />
                       </Link>
                     </li>
-                    {/* <li>
-                      <a href="index.html">
-                        <i className="flaticon-plus"></i>
-                      </a>
-                    </li> */}
+                    
                   </ul>
                 </div>
                 <div
@@ -447,10 +444,6 @@ export default function publicHome() {
       </div>
       {/* <!-- End Watch Video Area --> */}
 
-     
-
-     
-
       {/* <!-- Start Our Team Area --> */}
       <div className="team-area pt-100 pb-100">
         <div className="container">
@@ -485,21 +478,34 @@ export default function publicHome() {
                     <p>{x.subCategoryInfo}</p>
 
                     <div className="rating">
-  {Array.from({ length: 5 }, (_, i) => {
-    const rating = x.feedbackRating;
-    if (i < Math.floor(rating)) {
-      return <i key={i} className="fas fa-star filled-star"></i>;
-    } else if (i < rating) {
-      return <i key={i} className="fas fa-star-half-alt half-filled-star"></i>;
-    } else {
-      return <i key={i} className="far fa-star empty-star"></i>;
-    }
-  })}
-  <span className="rating-text">
-    ({Number.isInteger(x.feedbackRating) ? x.feedbackRating : x.feedbackRating.toFixed(1)} Star
-    {x.feedbackRating > 1 ? "s" : ""})
-  </span>
-</div>
+                      {Array.from({ length: 5 }, (_, i) => {
+                        const rating = x.feedbackRating;
+                        if (i < Math.floor(rating)) {
+                          return (
+                            <i key={i} className="fas fa-star filled-star"></i>
+                          );
+                        } else if (i < rating) {
+                          return (
+                            <i
+                              key={i}
+                              className="fas fa-star-half-alt half-filled-star"
+                            ></i>
+                          );
+                        } else {
+                          return (
+                            <i key={i} className="far fa-star empty-star"></i>
+                          );
+                        }
+                      })}
+                      <span className="rating-text">
+                        (
+                        {Number.isInteger(x.feedbackRating)
+                          ? x.feedbackRating
+                          : x.feedbackRating.toFixed(1)}{" "}
+                        Star
+                        {x.feedbackRating > 1 ? "s" : ""})
+                      </span>
+                    </div>
                     <ul className="team-list">
                       <li>
                         <a href="https://www.facebook.com/" target="_blank">
@@ -550,30 +556,28 @@ export default function publicHome() {
             <h2>Our Top Reviews</h2>
           </div>
           <div className="row ">
-          {feedback.slice(0, 3).map((x, index) => (
-            <div className="review-card-container" key={index}>
-            <div className="review-card shadow-sm">
-              <div className="review-card-header d-flex align-items-center mb-3">
-                <img
-                  src="/photo1.png"
-                  alt="images"
-                  className="review-user-photo"
-                />
-                <div className="review-user-info ms-3">
-                  <h5 className="user-name">{x.userInfo}</h5>
-                  <div
-                    className="user-rating starability-result"
-                    data-rating="1"
-                  ></div>
+            {feedback.slice(0, 3).map((x, index) => (
+              <div className="review-card-container" key={index}>
+                <div className="review-card shadow-sm">
+                  <div className="review-card-header d-flex align-items-center mb-3">
+                    <img
+                      src="/photo1.png"
+                      alt="images"
+                      className="review-user-photo"
+                    />
+                    <div className="review-user-info ms-3">
+                      <h5 className="user-name">{x.userInfo}</h5>
+                      <div
+                        className="user-rating starability-result"
+                        data-rating="1"
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="review-comment mt-2">
+                    <p className="comment-text">{x.comments}</p>
+                  </div>
                 </div>
               </div>
-              <div className="review-comment mt-2">
-                <p className="comment-text">
-                  {x.comments}                  
-                 </p>
-              </div>
-            </div>
-          </div>
             ))}
           </div>
         </div>
