@@ -546,7 +546,7 @@ export default function publicHome() {
       </div>
       {/* <!-- End Our Team Area --> */}
 
-      <div className="custom-review-section pt-100 pb-100">
+      {/* <div className="custom-review-section pt-100 pb-100">
   <div className="container">
     <div className="custom-review-title">
       <h2>Our Top Reviews</h2>
@@ -588,7 +588,7 @@ export default function publicHome() {
       ))}
     </div>
   </div>
-</div>
+</div> */}
 
     </>
   );
