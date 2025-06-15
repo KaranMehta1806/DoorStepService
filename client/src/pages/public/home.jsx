@@ -560,53 +560,43 @@ export default function publicHome() {
     <div className="row">
       {feedback.slice(0, 3).map((x, index) => (
         <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-          <div className="review-card shadow-sm p-4 mb-4" style={{ borderRadius: '10px', height: '100%' }}>
-            <div className="review-card-header d-flex align-items-center mb-3">
+          <div className="feedback-card shadow-sm p-4 mb-4" style={{ borderRadius: '10px', height: '100%' }}>
+            <div className="feedback-card-header d-flex align-items-center mb-3" style={{ gap: '12px' }}>
               <img
                 src={x.userPhoto || "/photo1.png"}
                 alt="user"
-                className="review-user-photo me-3"
+                className="feedback-user-photo"
                 style={{ 
                   width: '50px', 
                   height: '50px', 
                   borderRadius: '50%', 
                   objectFit: 'cover',
-                  flexShrink: 0  // Prevent image from shrinking
+                  flexShrink: 0
                 }}
               />
-              <div className="review-user-info" style={{ flex: 1 }}>
-                <h5 className="user-name mb-1">{x.userInfo || 'Anonymous'}</h5>
-                <div className="rating d-flex align-items-center">
-                  <div className="stars-container" style={{ lineHeight: 1 }}>
+              <div className="feedback-user-info" style={{ flex: 1 }}>
+                <h5 className="feedback-user-name mb-1">{x.userInfo || 'Anonymous'}</h5>
+                <div className="feedback-rating d-flex align-items-center" style={{ gap: '4px' }}>
+                  <div className="feedback-stars">
                     {Array.from({ length: 5 }, (_, i) => {
                       const rating = x.rating;
                       if (i < Math.floor(rating)) {
-                        return (
-                          <i key={i} className="fas fa-star filled-star" style={{ color: '#ffc107' }}></i>
-                        );
+                        return <i key={i} className="fas fa-star feedback-star-filled"></i>;
                       } else if (i < rating) {
-                        return (
-                          <i
-                            key={i}
-                            className="fas fa-star-half-alt half-filled-star"
-                            style={{ color: '#ffc107' }}
-                          ></i>
-                        );
+                        return <i key={i} className="fas fa-star-half-alt feedback-star-half"></i>;
                       } else {
-                        return (
-                          <i key={i} className="far fa-star empty-star" style={{ color: '#ffc107' }}></i>
-                        );
+                        return <i key={i} className="far fa-star feedback-star-empty"></i>;
                       }
                     })}
                   </div>
-                  <span className="rating-text ms-2" style={{ fontSize: '0.85rem' }}>
+                  <span className="feedback-rating-text">
                     ({Number.isInteger(x.rating) ? x.rating : x.rating.toFixed(1)})
                   </span>
                 </div>
               </div>
             </div>
-            <div className="review-comment mt-3">
-              <p className="comment-text" style={{ color: '#555' }}>
+            <div className="feedback-comment mt-3">
+              <p className="feedback-comment-text">
                 {x.comments || 'No comment provided'}
               </p>
             </div>
@@ -616,6 +606,7 @@ export default function publicHome() {
     </div>
   </div>
 </div>
+
     </>
   );
 }
