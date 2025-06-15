@@ -565,33 +565,41 @@ export default function publicHome() {
               <img
                 src={x.userPhoto || "/photo1.png"}
                 alt="user"
-                className="review-user-photo"
-                style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
+                className="review-user-photo me-3"
+                style={{ 
+                  width: '50px', 
+                  height: '50px', 
+                  borderRadius: '50%', 
+                  objectFit: 'cover',
+                  flexShrink: 0  // Prevent image from shrinking
+                }}
               />
-              <div className="review-user-info ms-3">
+              <div className="review-user-info" style={{ flex: 1 }}>
                 <h5 className="user-name mb-1">{x.userInfo || 'Anonymous'}</h5>
-                <div className="rating">
-                  {Array.from({ length: 5 }, (_, i) => {
-                    const rating = x.rating;
-                    if (i < Math.floor(rating)) {
-                      return (
-                        <i key={i} className="fas fa-star filled-star" style={{ color: '#ffc107' }}></i>
-                      );
-                    } else if (i < rating) {
-                      return (
-                        <i
-                          key={i}
-                          className="fas fa-star-half-alt half-filled-star"
-                          style={{ color: '#ffc107' }}
-                        ></i>
-                      );
-                    } else {
-                      return (
-                        <i key={i} className="far fa-star empty-star" style={{ color: '#ffc107' }}></i>
-                      );
-                    }
-                  })}
-                  <span className="rating-text ms-1">
+                <div className="rating d-flex align-items-center">
+                  <div className="stars-container" style={{ lineHeight: 1 }}>
+                    {Array.from({ length: 5 }, (_, i) => {
+                      const rating = x.rating;
+                      if (i < Math.floor(rating)) {
+                        return (
+                          <i key={i} className="fas fa-star filled-star" style={{ color: '#ffc107' }}></i>
+                        );
+                      } else if (i < rating) {
+                        return (
+                          <i
+                            key={i}
+                            className="fas fa-star-half-alt half-filled-star"
+                            style={{ color: '#ffc107' }}
+                          ></i>
+                        );
+                      } else {
+                        return (
+                          <i key={i} className="far fa-star empty-star" style={{ color: '#ffc107' }}></i>
+                        );
+                      }
+                    })}
+                  </div>
+                  <span className="rating-text ms-2" style={{ fontSize: '0.85rem' }}>
                     ({Number.isInteger(x.rating) ? x.rating : x.rating.toFixed(1)})
                   </span>
                 </div>
@@ -602,13 +610,6 @@ export default function publicHome() {
                 {x.comments || 'No comment provided'}
               </p>
             </div>
-            {x.serviceInfo && (
-              <div className="review-service mt-2">
-                <small className="text-muted">
-                  Service: {x.serviceInfo}
-                </small>
-              </div>
-            )}
           </div>
         </div>
       ))}

@@ -21,7 +21,19 @@
   color: #333;
 }
 
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Adjust space between stars */
+}
 
+.stars-container {
+  display: inline-flex;
+}
+
+.review-user-info {
+  min-width: 0; /* Prevent flex item from overflowing */
+}
 
 
 
