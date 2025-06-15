@@ -553,60 +553,37 @@ export default function publicHome() {
       {/* <!-- End Our Team Area --> */}
 
       <div className="services-area pt-100 pb-100">
-  <div className="container">
-    <div className="section-title">
-      <h2>Our Top Reviews</h2>
-    </div>
-    <div className="row">
-      {feedback.slice(0, 3).map((x, index) => (
-        <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
-          <div className="feedback-card shadow-sm p-4 mb-4" style={{ borderRadius: '10px', height: '100%' }}>
-            <div className="feedback-card-header d-flex align-items-center mb-3" style={{ gap: '12px' }}>
-              <img
-                src={x.userPhoto || "/photo1.png"}
-                alt="user"
-                className="feedback-user-photo"
-                style={{ 
-                  width: '50px', 
-                  height: '50px', 
-                  borderRadius: '50%', 
-                  objectFit: 'cover',
-                  flexShrink: 0
-                }}
-              />
-              <div className="feedback-user-info" style={{ flex: 1 }}>
-                <h5 className="feedback-user-name mb-1">{x.userInfo || 'Anonymous'}</h5>
-                <div className="feedback-rating d-flex align-items-center" style={{ gap: '4px' }}>
-                  <div className="feedback-stars">
-                    {Array.from({ length: 5 }, (_, i) => {
-                      const rating = x.rating;
-                      if (i < Math.floor(rating)) {
-                        return <i key={i} className="fas fa-star feedback-star-filled"></i>;
-                      } else if (i < rating) {
-                        return <i key={i} className="fas fa-star-half-alt feedback-star-half"></i>;
-                      } else {
-                        return <i key={i} className="far fa-star feedback-star-empty"></i>;
-                      }
-                    })}
+        <div className="container">
+          <div className="section-title">
+            <h2>Our Top Reviews</h2>
+          </div>
+          <div className="row ">
+            {feedback.slice(0, 3).map((x, index) => (
+              <div className="review-card-container" key={index}>
+                <div className="review-card shadow-sm">
+                  <div className="review-card-header d-flex align-items-center mb-3">
+                    <img
+                      src="/photo1.png"
+                      alt="images"
+                      className="review-user-photo"
+                    />
+                    <div className="review-user-info ms-3">
+                      <h5 className="user-name">{x.userInfo}</h5>
+                      <div
+                        className="user-rating starability-result"
+                        data-rating="1"
+                      ></div>
+                    </div>
                   </div>
-                  <span className="feedback-rating-text">
-                    ({Number.isInteger(x.rating) ? x.rating : x.rating.toFixed(1)})
-                  </span>
+                  <div className="review-comment mt-2">
+                    <p className="comment-text">{x.comments}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="feedback-comment mt-3">
-              <p className="feedback-comment-text">
-                {x.comments || 'No comment provided'}
-              </p>
-            </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
-
+      </div>
     </>
   );
 }
