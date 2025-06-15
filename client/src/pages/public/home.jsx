@@ -78,25 +78,20 @@ export default function publicHome() {
   }
 
   useEffect(() => {
-  async function fetchAll() {
-    try {
-      setIsLoading(true);
-      await Promise.all([
-        ReadCategory(),
-        ReadProviders(),
-        ReadFeedback()
-      ]);
-    } catch (error) {
-      console.error("Error loading data:", error);
-    } finally {
-      setIsLoading(false);
+    async function fetchAll() {
+      try {
+        setIsLoading(true);
+        await Promise.all([ReadCategory(), ReadProviders(), ReadFeedback()]);
+      } catch (error) {
+        console.error("Error loading data:", error);
+      } finally {
+        setIsLoading(false);
+      }
     }
-  }
-  fetchAll();
-}, []);
+    fetchAll();
+  }, []);
 
-   if (isLoading) return <Preloader />;  
-
+  if (isLoading) return <Preloader />;
 
   return (
     <>
@@ -119,7 +114,6 @@ export default function publicHome() {
                   orem ipsum dolor sit amet consectetur adipi scing adipi scing
                   elit.
                 </p>
-                
               </div>
             </div>
             <div className="col-lg-6">
@@ -199,7 +193,6 @@ export default function publicHome() {
                         />
                       </Link>
                     </li>
-                    
                   </ul>
                 </div>
                 <div
@@ -481,7 +474,8 @@ export default function publicHome() {
 
                     <div className="rating">
                       {Array.from({ length: 5 }, (_, i) => {
-                        const rating = x.feedbackRating;
+                        const rawRating = x.feedbackRating || 0;
+                        const rating = Math.max(rawRating, 1);
                         if (i < Math.floor(rating)) {
                           return (
                             <i key={i} className="fas fa-star filled-star"></i>
